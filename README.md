@@ -27,4 +27,4 @@ Notas importantes:
 Todas las sugerencias de Copilot fueron revisadas y adaptadas por los integrantes; las decisiones finales y la responsabilidad del código/documentación son del equipo.
 
 ## Enlace al sitio web
-- GitHub: https://USERNAME.github.io/REPO
+- GitHub: https://rolando8-03.github.io/PCD0125_Segundo_Corte
