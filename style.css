@@ -1,88 +1,19 @@
-/* Clean single stylesheet for the project
-	 One :root block, neutral palette, responsive helpers
-*/
-
-:root {
-	--bg: #f7f8f9;
-	--surface: #ffffff;
-	--muted: #6b6b6b;
-	--text: #1f2933;
-	--accent: #2f4f4f;
-	--accent-2: #8aa29b;
-	--sand: #f0e6d8;
-	--border: #e6e7e8;
-	--shadow-sm: 0 6px 18px rgba(16,24,32,0.06);
-	--radius: 12px;
-}
-
-* { box-sizing: border-box }
-html, body { height: 100% }
-body {
-	font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
-	margin: 0;
-	background: var(--bg);
-	color: var(--text);
-	-webkit-font-smoothing: antialiased;
-}
-
-.container { max-width: 1100px; margin: 0 auto; padding: 1rem }
-
-/* Header */
-.site-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: .75rem 0; position: sticky; top: 0; z-index: 40 }
-.site-header .container { display:flex; align-items:center; justify-content:space-between; gap:1rem }
-.brand { display:flex; align-items:center; gap:.75rem }
-.brand-logo { width:56px; height:56px; border-radius:12px; background: linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700 }
-.site-title { margin:0; font-size:1.1rem; font-weight:700 }
-
-/* Navigation */
-.main-nav ul { list-style: none; margin:0; padding:0; display:flex; gap:.6rem; align-items:center }
-.main-nav a { color: var(--muted); text-decoration: none; padding: .45rem .6rem; border-radius: 10px }
-.main-nav a.active { color: var(--accent); background: rgba(47,79,79,0.06) }
-
-/* Layout */
-.hero { padding:2.25rem 0; display:grid; gap:1rem }
-.hero h2 { margin:0 0 .25rem; font-size:2rem }
-.lead { font-size:1.05rem; color:#334653 }
-
-.btn { display:inline-flex; align-items:center; gap:.5rem; padding:.6rem .9rem; border-radius:999px; border:0; background:var(--accent); color:#fff }
-.btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--border) }
-
-/* Cards & grids */
-.cards-row { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem }
-.card { background: var(--surface); border-radius: var(--radius); padding:1rem; border:1px solid var(--border); box-shadow: var(--shadow-sm); display:flex; flex-direction:column }
-.card h3 { margin:.25rem 0 .5rem }
-.thumb-img { height:140px; background: var(--sand); border-radius:8px; margin-bottom:.75rem }
-
-.gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem }
-
-/* Forms */
-form { display:grid; gap:.6rem; max-width:640px }
-label { font-weight:600; color:var(--muted); font-size:.95rem }
-input[type="text"], input[type="email"], textarea { padding:.75rem; border:1px solid var(--border); border-radius:10px; background:transparent }
-button { background:var(--accent); color:#fff; padding:.6rem 1rem; border:0; border-radius:8px; cursor:pointer }
-
-/* Helpers */
-.muted-small { font-size:.95rem; color:var(--muted) }
-.badge { display:inline-block; background:#f4f6f5; color:var(--accent); padding:.25rem .5rem; border-radius:999px; font-size:.85rem; border:1px solid var(--border) }
-
-@media (min-width:900px) { .hero { grid-template-columns: 1fr 420px } }
-
-/* End */
-/* style.css - Clean unified stylesheet for the León guide
-   Single :root block, neutral-but-striking palette, responsive utilities
+/* Clean unified stylesheet for the León guide
+   Single :root and consistent rules. Removed duplicates and stray fragments.
 */
 
 :root{
-  --bg: #f7f8f9;        /* very light background */
-  --surface: #ffffff;   /* cards and panels */
-  --muted: #6b6b6b;     /* secondary text */
-  --text: #1f2933;      /* main text */
-  --accent: #2f4f4f;    /* deep neutral teal */
-  --accent-2: #8aa29b;  /* soft complementary mint */
-  --sand: #f0e6d8;      /* warm sand for thumbnails */
-  --border: #e6e7e8;
-  --shadow-sm: 0 6px 18px rgba(16,24,32,0.06);
-  --shadow-lg: 0 20px 40px rgba(16,24,32,0.08);
+  --bg: #fff7f3;
+  --surface: #ffffff;
+  --muted: #6a6f73;
+  --text: #10232e;
+  --accent: #163d63;
+  --accent-2: #b84b2e;
+  --gold: #e0b865;
+  --sand: #f3e7d8;
+  --border: #e8e3dd;
+  --shadow-sm: 0 8px 24px rgba(16,32,48,0.06);
+  --shadow-lg: 0 24px 48px rgba(16,32,48,0.09);
   --radius: 12px;
 }
 
@@ -91,7 +22,7 @@ html,body{height:100%}
 body{
   font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
   margin:0;
-  background:var(--bg);
+  background:linear-gradient(180deg,var(--bg),#fff);
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -100,69 +31,56 @@ body{
 .container{max-width:1100px;margin:0 auto;padding:1rem}
 
 /* Header */
-.site-header{
-  background:var(--surface);
-  border-bottom:1px solid var(--border);
-  padding:.8rem 0;
-  position:sticky;top:0;z-index:50;
-}
-.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.site-header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:.9rem 0;position:sticky;top:0;z-index:60;box-shadow:var(--shadow-sm)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:.75rem}
-.brand-logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.05rem}
-.site-title{margin:0;font-size:1.1rem;font-weight:700}
-.site-sub{font-size:.88rem;color:var(--muted)}
+.brand-logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--gold),rgba(255,255,255,0.12));display:flex;align-items:center;justify-content:center;color:var(--accent-2);font-weight:800}
+.site-title{margin:0;font-size:1.15rem;font-weight:700}
 
+/* Navigation */
 .main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;align-items:center}
-.main-nav a{color:var(--muted);text-decoration:none;padding:.45rem .6rem;border-radius:10px;font-weight:600}
-.main-nav a:hover{background:rgba(0,0,0,0.04);color:var(--text)}
-.main-nav a.active{background:linear-gradient(90deg, rgba(47,79,79,0.06), transparent);color:var(--accent)}
+.main-nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:700}
+.main-nav a:hover{background:rgba(255,255,255,0.06)}
+.main-nav a.active{background:rgba(255,255,255,0.12)}
 
 /* Hero */
-.hero{padding:2.25rem 0;display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
-.hero-inner{display:flex;flex-direction:column;gap:.8rem}
-.hero h2{margin:0 0 .25rem;font-size:2rem;color:var(--text);line-height:1.05}
-.lead{font-size:1.05rem;color:#334653;max-width:68ch}
-.hero-cta{display:flex;gap:.6rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border-radius:999px;border:0;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
-.btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--border)}
+.hero{padding:2.5rem 0;display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
+.hero h2{margin:0 0 .25rem;font-size:2rem;color:var(--surface)}
+.lead{font-size:1.06rem;color:rgba(255,255,255,0.92);max-width:68ch}
+.btn{display:inline-flex;align-items:center;padding:.6rem .95rem;border-radius:999px;border:0;background:rgba(255,255,255,0.08);color:#fff;font-weight:700}
+.btn.primary{background:var(--gold);color:var(--accent-2)}
 
-/* Sections and cards */
+/* Content */
 section{margin-top:1.25rem}
 .cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
 .card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
 .card h3{margin:.25rem 0 .5rem;font-size:1.05rem;color:var(--text)}
-.card p{margin:0;color:var(--muted);font-size:.95rem}
-.thumb-img{height:140px;background:var(--sand);border-radius:8px;margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;color:#7b6b54;font-weight:700}
+.card p{margin:0;color:var(--muted)}
+
+.thumb-img{height:140px;background:linear-gradient(180deg,var(--sand),#fff);border-radius:8px;margin-bottom:.75rem}
 
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
 
-/* Food grid / places */
-.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-.food-card{border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-sm)}
-.food-card img{width:100%;height:160px;object-fit:cover;display:block}
+/* Food grid */
+.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
 
-/* Contact form */
+
+/* Forms */
 form{display:grid;gap:.6rem;max-width:640px}
-label{font-weight:600;color:var(--muted);font-size:.95rem}
-input[type="text"],input[type="email"],textarea{padding:.75rem;border:1px solid var(--border);border-radius:10px;background:transparent}
-button{background:var(--accent);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px;cursor:pointer}
+label{font-weight:600;color:var(--muted)}
+input,textarea{padding:.75rem;border:1px solid var(--border);border-radius:10px}
+button{background:var(--accent-2);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px}
 
 /* Lightbox */
-.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:100}
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:120}
 .lightbox[aria-hidden="false"]{display:flex}
-.lightbox-content{background:var(--surface);padding:1rem;border-radius:12px;max-width:900px;width:95%;box-shadow:var(--shadow-lg)}
-.lightbox img{width:100%;height:auto;border-radius:8px;display:block}
-.lightbox-close{background:transparent;border:0;font-size:1.6rem;position:absolute;top:18px;right:18px;color:#fff}
 
 /* Footer */
-.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted);background:transparent}
+.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted)}
 
-/* Helpers and responsive */
-.muted-small{font-size:.95rem;color:var(--muted)}
-.badge{display:inline-block;background:#f4f6f5;color:var(--accent);padding:.25rem .5rem;border-radius:999px;font-size:.85rem;border:1px solid var(--border)}
 @media (min-width:900px){.hero{grid-template-columns:1fr 420px}}
-/* Minimal, cleaned stylesheet - single :root and consistent rules */
 
+/* End */
 :root{
 	--bg: #f7f8f9;
 	--surface: #ffffff;
@@ -361,44 +279,64 @@ body{font-family: 'Segoe UI', Arial, sans-serif;margin:0;background:var(--bg);co
 .hero h2{margin:0 0 .5rem;font-size:2rem;color:#10334b}
 #hero p.lead{font-size:1.05rem;color:#254b59;margin-bottom:.75rem}
 
-/* Bandera y confeti */
-.flag svg{border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-	--bg: #f6f7f8; /* page background */
-	--surface: #ffffff; /* cards and panels */
-	--muted: #6c7378; /* secondary text */
-	--text: #0f1720; /* main text */
-	--accent: #264653; /* deep teal */
-	--accent-2: #8ab6a9; /* soft mint */
-	--border: #e6e9eb;
-	--shadow: 0 12px 30px rgba(11,20,25,0.06);
+/* Clean unified stylesheet for the León guide - final version */
+
+:root{
+	--bg: #fff7f3;
+	--surface: #ffffff;
+	--muted: #6a6f73;
+	--text: #10232e;
+	--accent: #163d63;
+	--accent-2: #b84b2e;
+	--gold: #e0b865;
+	--sand: #f3e7d8;
+	--border: #e8e3dd;
+	--shadow-sm: 0 8px 24px rgba(16,32,48,0.06);
+	--shadow-lg: 0 24px 48px rgba(16,32,48,0.09);
 	--radius: 12px;
-
-/* Gastronomía */
-.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem}
-.food-card{border:1px solid var(--border);padding:0;border-radius:10px;background:var(--card);overflow:hidden}
-.food-card img{width:100%;height:160px;object-fit:cover;display:block}
-.food-card h3{margin:.5rem 1rem 0.25rem}
-.food-card p{margin:0 1rem 1rem;color:var(--muted)}
-.card{border:1px solid var(--border);padding:1rem;border-radius:10px;background:var(--card);box-shadow:var(--shadow)}
-.card h3{margin:.25rem 0 .5rem;font-size:1.05rem;color:#12323f}
-.card p{margin:0;color:var(--muted);font-size:.95rem}
-.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-.thumb-img{height:140px;background:var(--sand);border-radius:8px;margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;color:#7b6b54;font-weight:700}
-.thumb-img img{width:100%;height:100%;object-fit:cover;border-radius:8px;margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;color:#7b6b54;font-weight:700}
-.site-footer{border-top:1px solid var(--border);padding:1rem 0;margin-top:2rem;color:var(--muted);background:transparent}
-form{display:grid;gap:.5rem;max-width:480px}
-input[type="text"],input[type="email"],textarea{padding:.6rem;border:1px solid #ddd;border-radius:8px;background:#fff}
-button{background:var(--accent);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px;cursor:pointer}
-.map-placeholder{height:200px;background:linear-gradient(180deg,#fbf8f4,#fff);border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;color:#888;border-radius:8px}
-
-/* Responsive */
-@media (max-width:880px){
-	.hero{grid-template-columns:1fr;}
-	.hero h2{font-size:1.45rem}
 }
 
-/* Small helpers */
-.muted-small{font-size:.9rem;color:var(--muted)}
-.badge{display:inline-block;background:var(--sand);color:#7b6b54;padding:.25rem .5rem;border-radius:999px;font-size:.85rem;border:1px solid var(--border)}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+	margin:0;
+	background:linear-gradient(180deg,var(--bg),#fff);
+	color:var(--text);
+}
+
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+
+.site-header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:.9rem 0;position:sticky;top:0;z-index:60;box-shadow:var(--shadow-sm)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand-logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--gold),rgba(255,255,255,0.12));display:flex;align-items:center;justify-content:center;color:var(--accent-2);font-weight:800}
+
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;align-items:center}
+.main-nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:700}
+
+.hero{padding:2.5rem 0;display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
+.hero h2{margin:0 0 .25rem;font-size:2rem;color:var(--surface)}
+.lead{font-size:1.06rem;color:rgba(255,255,255,0.92);max-width:68ch}
+
+.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+
+.thumb-img{height:140px;background:linear-gradient(180deg,var(--sand),#fff);border-radius:8px;margin-bottom:.75rem}
+
+.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+
+form{display:grid;gap:.6rem;max-width:640px}
+input,textarea{padding:.75rem;border:1px solid var(--border);border-radius:10px}
+button{background:var(--accent-2);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px}
+
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:120}
+.lightbox[aria-hidden="false"]{display:flex}
+
+.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted);background:transparent}
+
+@media (min-width:900px){.hero{grid-template-columns:1fr 420px}}
+
+/* EOF */
 
 
