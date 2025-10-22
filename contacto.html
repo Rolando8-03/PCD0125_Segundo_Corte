@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto / Mapa — Guía Turística de León</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Guía Turística de León</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="lugares.html">Lugares turísticos</a></li>
+          <li><a href="gastronomia.html">Gastronomía</a></li>
+          <li><a href="contacto.html" class="active">Contacto / Mapa</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Contacto</h2>
+      <form id="contact-form">
+        <label for="name">Nombre</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Correo</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <h3>Mapa (placeholder)</h3>
+      <div class="map-placeholder">Aquí irá el mapa con la ubicación de los lugares.</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">&copy; <span id="year-c"></span> Guía Turística de León</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
