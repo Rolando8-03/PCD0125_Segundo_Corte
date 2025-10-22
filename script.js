@@ -9,8 +9,25 @@ document.addEventListener('DOMContentLoaded',function(){
 	if(form){
 		form.addEventListener('submit',function(e){
 			e.preventDefault();
-			alert('Formulario de contacto simulado. Aquí se implementará el envío.');
+			var name = document.getElementById('name').value.trim();
+			var email = document.getElementById('email').value.trim();
+			var message = document.getElementById('message').value.trim();
+			var status = document.getElementById('contact-status');
+			if(!name || !email || !message){
+				status.textContent = 'Por favor completa todos los campos.';
+				status.style.color = 'crimson';
+				return;
+			}
+			// Simular guardado local
+			var store = JSON.parse(localStorage.getItem('contact_messages') || '[]');
+			store.push({name:name,email:email,message:message,created:new Date().toISOString()});
+			localStorage.setItem('contact_messages', JSON.stringify(store));
+			// Mostrar confirmación
+			status.textContent = 'Gracias, tu mensaje ha sido guardado localmente. Pronto te responderemos (simulado).';
+			status.style.color = 'green';
 			form.reset();
+			// Opcional: limpiar el mensaje después de 6s
+			setTimeout(function(){ status.textContent=''; },6000);
 		});
 	}
     
