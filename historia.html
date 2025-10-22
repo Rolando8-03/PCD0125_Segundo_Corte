@@ -5,31 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Historia — Guía Turística de León</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Historia y patrimonio de León, Nicaragua - guía breve">
+  <meta name="robots" content="index, follow">
 </head>
 <body>
-  <header class="site-header">
-<<<<<<< HEAD
-    <a class="skip-link" href="#main">Saltar al contenido</a>
-
-    <div class="hero" style="background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url('images/leon-hero.jpg') center/cover no-repeat; padding: 3.5rem 0; color: #fff;">
-      <div class="container hero-content" style="display: flex; flex-direction: column; gap: .5rem;">
-        <h1 class="site-title" style="margin: 0; font-size: clamp(1.5rem, 4vw, 2.5rem); letter-spacing: .5px;">Guía Turística de León</h1>
-        <p class="site-tagline" style="margin: 0; opacity: .95;">Historia, arquitectura y tradiciones que forjaron nuestra identidad.</p>
-        <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-top: .75rem; font-size: .95rem;">
-          <ol style="list-style: none; padding: 0; margin: 0; display: inline-flex; gap: .5rem; align-items: center; color: #f2f2f2;">
-            <li><a href="index.html" style="color: #f2f2f2; text-decoration: underline 1px rgba(255,255,255,.3);">Inicio</a></li>
-            <li aria-current="page" style="opacity: .9;">›</li>
-            <li style="opacity: .9;">Historia</li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-
-    <div class="container" style="padding: .75rem 0;">
-      <nav class="main-nav" role="navigation" aria-label="Menú principal">
-        <ul style="display:flex; gap:1rem; flex-wrap:wrap; margin:0; padding:0; list-style:none;">
-=======
-    <div class="container">
   <header class="site-header">
     <div class="container">
       <div class="brand">
@@ -41,7 +20,6 @@
       </div>
       <nav class="main-nav" aria-label="Navegación principal">
         <ul>
->>>>>>> 61dcfe47294bfae03c50f89789e4a7df714e06e2
           <li><a href="index.html">Inicio</a></li>
           <li><a href="historia.html" class="active" aria-current="page">Historia</a></li>
           <li><a href="lugares.html">Lugares turísticos</a></li>
@@ -51,16 +29,47 @@
       </nav>
     </div>
   </header>
-    <section>
-    <section>
-      <h2>Historia de León</h2>
+
+  <main class="container" id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb" style="margin: .75rem 0; font-size: .95rem;">
+      <ol style="list-style:none; padding:0; margin:0; display:flex; gap:.5rem; align-items:center;">
+        <li><a href="index.html">Inicio</a></li>
+        <li aria-current="page">›</li>
+        <li>Historia</li>
+      </ol>
+    </nav>
+
+    <section aria-labelledby="historia-title">
+      <h2 id="historia-title">Historia de León</h2>
       <p class="muted-small">León fue fundada en el siglo XVI y se convirtió en un centro de la vida política, cultural y literaria de Nicaragua. La ciudad conserva arquitectura colonial, iglesias y plazas que narran episodios de la época republicana y movimientos sociales del siglo XX.</p>
       <p>Destacan figuras como Rubén Darío, cuyo legado literario y cultural aún es visible en museos y eventos locales. Recomendamos visitar la ruta histórica del centro para apreciar fachadas, plazas y la influencia de distintos períodos arquitectónicos.</p>
+
+      <h3>Datos rápidos</h3>
+      <ul class="quick-facts" style="margin: .5rem 0 1rem 0;">
+        <li class="fact">Fundación: Siglo XVI</li>
+        <li class="fact">Idioma: Español</li>
+        <li class="fact">Moneda: Córdoba</li>
+        <li class="fact">Clima: Tropical - temporada seca y lluvias</li>
+      </ul>
+
+      <h3>Eventos anuales</h3>
+      <div class="cards-row">
+        <article class="card">
+          <h3>Festival de la Palabra</h3>
+          <p class="muted-small">Evento cultural que reúne a escritores, tertulias y actividades para fomentar la lectura y la literatura local.</p>
+        </article>
+        <article class="card">
+          <h3>Fiestas patronales</h3>
+          <p class="muted-small">Celebraciones religiosas y comunitarias con música, procesiones y ferias de comida.</p>
+        </article>
+      </div>
     </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container">&copy; <span id="year-h"></span> Guía Turística de León</div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
