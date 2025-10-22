@@ -27,4 +27,27 @@ Notas importantes:
 Todas las sugerencias de Copilot fueron revisadas y adaptadas por los integrantes; las decisiones finales y la responsabilidad del código/documentación son del equipo.
 
 ## Enlace al sitio web
-- GitHub: https://USERNAME.github.io/REPO
+- GitHub: https://rolando8-03.github.io/PCD0125_Segundo_Corte
+
+## Cambios aplicados (resumen)
+Esta rama incluye mejoras visuales y de usabilidad para que el sitio tenga un tono más profesional y neutro, además de contenido adicional breve. Cambios principales:
+
+- Rediseño de estilos en `style.css`: paleta neutra, mejor tipografía, tarjetas, responsividad y lightbox.
+- Actualización de la página principal `index.html`: hero más claro, secciones de lugares, itinerarios recomendados y galería.
+- Ajustes en páginas secundarias (`historia.html`, `lugares.html`, `gastronomia.html`, `contacto.html`) para mantener la coherencia visual y mejorar contenido.
+- `script.js` mejorado: inserta el año en los footers, valida el formulario (envío simulado y guardado en localStorage), resalta la navegación activa y añade un toggle de menú móvil.
+
+## Cómo probar localmente
+1. Abre el archivo `index.html` en tu navegador (doble click o `Abrir con...`).
+2. Revisa las páginas: `historia.html`, `lugares.html`, `gastronomia.html`, `contacto.html`.
+3. En `contacto.html` prueba el formulario; los mensajes se guardan en `localStorage` (solo local).
+
+Si quieres levantar un servidor estático (opcional), puedes usar Python desde PowerShell:
+
+```powershell
+# desde la carpeta del proyecto
+python -m http.server 8000
+# y abre http://localhost:8000
+```
+
+Si quieres que haga cambios adicionales (paleta, tipografías externas, o añadir más contenido), dime qué prefieres y lo implemento.

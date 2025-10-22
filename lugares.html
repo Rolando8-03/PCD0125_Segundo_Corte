@@ -9,12 +9,18 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <h1 class="site-title">Guía Turística de León</h1>
-      <nav class="main-nav">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">L</div>
+        <div>
+          <h1 class="site-title">Guía Turística de León</h1>
+          <div class="site-sub">Lugares y visitas</div>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navegación principal">
         <ul>
           <li><a href="index.html">Inicio</a></li>
           <li><a href="historia.html">Historia</a></li>
-          <li><a href="lugares.html" class="active">Lugares turísticos</a></li>
+          <li><a href="lugares.html" class="active" aria-current="page">Lugares turísticos</a></li>
           <li><a href="gastronomia.html">Gastronomía</a></li>
           <li><a href="contacto.html">Contacto / Mapa</a></li>
         </ul>
@@ -24,22 +30,92 @@
 
   <main class="container">
     <section>
-      <h2>Lugares turísticos</h2>
-      <div class="gallery">
-        <article class="card">
-          <div class="thumb">Imagen 1</div>
-          <h3>Nombre del lugar 1</h3>
-          <p>Descripción breve. (Pendiente)</p>
+      <h2>Lugares turísticos emblemáticos de León</h2>
+      <p class="muted-small">Selección de sitios destacados con descripción breve y opción de ampliar imágenes y leer más.</p>
+
+      <div class="gallery" role="list">
+        <article class="card" role="listitem">
+          <figure>
+            <img src="images/catedral.jpg" alt="Vista exterior de la Catedral de León" class="thumb-img" loading="lazy" width="800" height="450" data-title="Catedral de León" data-desc="La Catedral de la Asunción, Patrimonio de la Humanidad, es la iglesia más grande de Centroamérica. Destaca por sus bóvedas, cripta y vistas desde la azotea.">
+            <figcaption>
+              <h3>Catedral de León</h3>
+              <p class="card-desc">Iglesia monumental y mirador histórico, con arte sacro y tumbas de personajes ilustres.</p>
+              <div class="card-actions">
+                <a href="catedral.html" class="cta small">Más info</a>
+                <button class="cta-outline btn-open" data-image="images/catedral.jpg" data-title="Catedral de León" data-desc="La Catedral de la Asunción, Patrimonio de la Humanidad, es la iglesia más grande de Centroamérica.">Ver imagen</button>
+              </div>
+            </figcaption>
+          </figure>
         </article>
-        <article class="card">
-          <div class="thumb">Imagen 2</div>
-          <h3>Nombre del lugar 2</h3>
-          <p>Descripción breve. (Pendiente)</p>
+
+        <article class="card" role="listitem">
+          <figure>
+            <img src="images/ruben-dario.jpg" alt="Museo Rubén Darío" class="thumb-img" loading="lazy" data-title="Museo Rubén Darío" data-desc="Museo dedicado al poeta nacional Rubén Darío con objetos personales y exposiciones sobre su vida y obra.">
+            <figcaption>
+              <h3>Museo Rubén Darío</h3>
+              <p class="card-desc">Recorrido por la vida y legado del poeta más influyente de Nicaragua.</p>
+              <div class="card-actions">
+                <a href="museo-ruben-dario.html" class="cta small">Más info</a>
+                <button class="cta-outline btn-open" data-image="images/ruben-dario.jpg" data-title="Museo Rubén Darío" data-desc="Museo dedicado al poeta nacional Rubén Darío con objetos personales y exposiciones sobre su vida y obra.">Ver imagen</button>
+              </div>
+            </figcaption>
+          </figure>
         </article>
-        <article class="card">
-          <div class="thumb">Imagen 3</div>
-          <h3>Nombre del lugar 3</h3>
-          <p>Descripción breve. (Pendiente)</p>
+
+        <article class="card" role="listitem">
+          <figure>
+            <img src="images/recoleccion.jpg" alt="Iglesia La Recolección" class="thumb-img" loading="lazy" data-title="Iglesia La Recolección" data-desc="Templo barroco con detalles coloniales y vistas pintorescas en el centro histórico.">
+            <figcaption>
+              <h3>Iglesia La Recolección</h3>
+              <p class="card-desc">Ejemplo de arquitectura colonial y actividad religiosa tradicional.</p>
+              <div class="card-actions">
+                <a href="recoleccion.html" class="cta small">Más info</a>
+                <button class="cta-outline btn-open" data-image="images/recoleccion.jpg" data-title="Iglesia La Recolección" data-desc="Templo barroco con detalles coloniales y vistas pintorescas en el centro histórico.">Ver imagen</button>
+              </div>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="card" role="listitem">
+          <figure>
+            <img src="images/cerro-negro.jpg" alt="Cerro Negro - volcán" class="thumb-img" loading="lazy" data-title="Cerro Negro" data-desc="Volcán activo cercano a León, popular para el 'volcano boarding' y vistas panorámicas.">
+            <figcaption>
+              <h3>Cerro Negro</h3>
+              <p class="card-desc">Aventura y paisajes volcánicos; ideal para excursiones y fotografía.</p>
+              <div class="card-actions">
+                <a href="cerro-negro.html" class="cta small">Más info</a>
+                <button class="cta-outline btn-open" data-image="images/cerro-negro.jpg" data-title="Cerro Negro" data-desc="Volcán activo cercano a León, popular para el 'volcano boarding' y vistas panorámicas.">Ver imagen</button>
+              </div>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="card" role="listitem">
+          <figure>
+            <img src="images/museo-revolucion.jpg" alt="Museo de la Revolución" class="thumb-img" loading="lazy" data-title="Museo de la Revolución" data-desc="Espacio que narra la historia reciente de Nicaragua con fotografías, objetos y testimonios.">
+            <figcaption>
+              <h3>Museo de la Revolución</h3>
+              <p class="card-desc">Documenta procesos sociales y políticos, con colecciones fotográficas y objetos históricos.</p>
+              <div class="card-actions">
+                <a href="museo-revolucion.html" class="cta small">Más info</a>
+                <button class="cta-outline btn-open" data-image="images/museo-revolucion.jpg" data-title="Museo de la Revolución" data-desc="Espacio que narra la historia reciente de Nicaragua con fotografías, objetos y testimonios.">Ver imagen</button>
+              </div>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="card" role="listitem">
+          <figure>
+            <img src="images/mercado-central.jpg" alt="Mercado Central de León" class="thumb-img" loading="lazy" data-title="Mercado Central" data-desc="Centro de comercio local con productos frescos, artesanía y comida típica.">
+            <figcaption>
+              <h3>Mercado Central</h3>
+              <p class="card-desc">Vibrante mercado para probar sabores locales y comprar artesanías.</p>
+              <div class="card-actions">
+                <a href="mercado-central.html" class="cta small">Más info</a>
+                <button class="cta-outline btn-open" data-image="images/mercado-central.jpg" data-title="Mercado Central" data-desc="Centro de comercio local con productos frescos, artesanía y comida típica.">Ver imagen</button>
+              </div>
+            </figcaption>
+          </figure>
         </article>
       </div>
     </section>
@@ -48,6 +124,51 @@
   <footer class="site-footer">
     <div class="container">&copy; <span id="year-l"></span> Guía Turística de León</div>
   </footer>
+
+  <!-- Lightbox / modal simple -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Visor de imágenes">
+    <div class="lightbox-content" role="document">
+      <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+      <img src="" alt="" id="lightbox-img" />
+      <h3 id="lightbox-title"></h3>
+      <p id="lightbox-desc"></p>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+
+  <!-- Pequeño script local para abrir/cerrar el lightbox sin modificar script.js -->
+  <script>
+    (function(){
+      var lightbox = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lightbox-img');
+      var lbTitle = document.getElementById('lightbox-title');
+      var lbDesc = document.getElementById('lightbox-desc');
+
+      function open(src, title, desc, alt){
+        lbImg.src = src || '';
+        lbImg.alt = alt || title || '';
+        lbTitle.textContent = title || '';
+        lbDesc.textContent = desc || '';
+        lightbox.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        lightbox.setAttribute('aria-hidden','true');
+        lbImg.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.btn-open').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          open(btn.dataset.image, btn.dataset.title, btn.dataset.desc);
+        });
+      });
+
+      document.querySelectorAll('.lightbox-close').forEach(function(b){ b.addEventListener('click', close); });
+      lightbox.addEventListener('click', function(e){ if(e.target === lightbox) close(); });
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+    })();
+  </script>
 </body>
 </html>
