@@ -8,12 +8,27 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">Guía Turística de León</h1>
-      <nav class="main-nav">
-        <ul>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <div class="hero" style="background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url('images/leon-hero.jpg') center/cover no-repeat; padding: 3.5rem 0; color: #fff;">
+      <div class="container hero-content" style="display: flex; flex-direction: column; gap: .5rem;">
+        <h1 class="site-title" style="margin: 0; font-size: clamp(1.5rem, 4vw, 2.5rem); letter-spacing: .5px;">Guía Turística de León</h1>
+        <p class="site-tagline" style="margin: 0; opacity: .95;">Historia, arquitectura y tradiciones que forjaron nuestra identidad.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-top: .75rem; font-size: .95rem;">
+          <ol style="list-style: none; padding: 0; margin: 0; display: inline-flex; gap: .5rem; align-items: center; color: #f2f2f2;">
+            <li><a href="index.html" style="color: #f2f2f2; text-decoration: underline 1px rgba(255,255,255,.3);">Inicio</a></li>
+            <li aria-current="page" style="opacity: .9;">›</li>
+            <li style="opacity: .9;">Historia</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container" style="padding: .75rem 0;">
+      <nav class="main-nav" role="navigation" aria-label="Menú principal">
+        <ul style="display:flex; gap:1rem; flex-wrap:wrap; margin:0; padding:0; list-style:none;">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="historia.html" class="active">Historia</a></li>
+          <li><a href="historia.html" class="active" aria-current="page">Historia</a></li>
           <li><a href="lugares.html">Lugares turísticos</a></li>
           <li><a href="gastronomia.html">Gastronomía</a></li>
           <li><a href="contacto.html">Contacto / Mapa</a></li>
