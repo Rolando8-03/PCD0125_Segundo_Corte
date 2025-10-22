@@ -24,10 +24,55 @@
 	</header>
 
 	<main class="container">
-		<section id="bienvenida" class="hero">
-			<h2>Bienvenido a León</h2>
-			<p>Presentación general y bienvenida. Usa la navegación para explorar las diferentes secciones de esta guía.</p>
-			<p class="muted">(Contenido de ejemplo — por ahora sin información detallada)</p>
+		<section id="bienvenida" class="hero" aria-labelledby="welcome-title">
+			<div class="hero-left">
+				<h2 id="welcome-title">Bienvenido a León, Nicaragua</h2>
+				<p class="lead">Descubre la historia, la arquitectura y la cultura de una de las ciudades más importantes de Nicaragua. Explora sus iglesias, museos, volcanes cercanos y la gastronomía local.</p>
+				<p class="muted-small">Esta guía es un resumen visual para turistas y curiosos. Usa la navegación para ver secciones completas.</p>
+				<p><a class="cta" href="lugares.html">Ver lugares turísticos</a> <span style="margin-left:.5rem" class="badge">Catedral • Rubén Darío • Volcanes</span></p>
+			</div>
+			<aside class="hero-card" aria-hidden="false">
+				<div class="thumb">Catedral de León</div>
+				<p class="muted-small">Una de las catedrales más grandes de Centroamérica, conocida por su arquitectura y los techos que ofrecen vista a la ciudad.</p>
+			</aside>
+		</section>
+
+		<section id="lugares-representativos">
+			<h3>Lugares representativos</h3>
+			<p class="muted-small">Seleccionamos algunos sitios emblemáticos que puedes visitar en León.</p>
+			<div class="cards-row">
+				<article class="card" aria-labelledby="catedral">
+					<div class="thumb-img">Catedral</div>
+					<h3 id="catedral">Catedral de León</h3>
+					<p>Icono religioso y cultural. Subir a su azotea ofrece vistas panorámicas de la ciudad y los volcanes.</p>
+				</article>
+				<article class="card" aria-labelledby="ruben">
+					<div class="thumb-img">Rubén Darío</div>
+					<h3 id="ruben">Museo Rubén Darío</h3>
+					<p>Dedicado al poeta nacional; un recorrido por su vida y la influencia modernista en Nicaragua.</p>
+				</article>
+				<article class="card" aria-labelledby="telica">
+					<div class="thumb-img">Volcán</div>
+					<h3 id="telica">Volcán Telica</h3>
+					<p>Excursiones y miradores. Telica es uno de los volcanes activos cercanos con paisajes impresionantes.</p>
+				</article>
+				<article class="card" aria-labelledby="calzada">
+					<div class="thumb-img">Calle</div>
+					<h3 id="calzada">Calle La Calzada</h3>
+					<p>Centro social por excelencia, lleno de cafés, artesanías y vida nocturna tradicional.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="galeria" style="margin-top:1.25rem;">
+			<h3>Galería</h3>
+			<p class="muted-small">Imágenes y postales de la ciudad (placeholder ilustrativo).</p>
+			<div class="gallery">
+				<div class="card"><div class="thumb-img">Plaza</div><p class="muted-small">Plaza Central</p></div>
+				<div class="card"><div class="thumb-img">Iglesia</div><p class="muted-small">Iglesias coloniales</p></div>
+				<div class="card"><div class="thumb-img">Comida</div><p class="muted-small">Gastronomía típica</p></div>
+				<div class="card"><div class="thumb-img">Mercado</div><p class="muted-small">Mercados y artesanías</p></div>
+			</div>
 		</section>
 	</main>
 
