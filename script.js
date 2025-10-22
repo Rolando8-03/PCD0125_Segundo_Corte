@@ -13,5 +13,19 @@ document.addEventListener('DOMContentLoaded',function(){
 			form.reset();
 		});
 	}
+    
+	// Resaltar link activo en la navegación según data-link
+	var links = document.querySelectorAll('.main-nav .nav-link');
+	links.forEach(function(a){
+		try{
+			if(a.dataset.link && window.location.href.indexOf(a.getAttribute('href')) !== -1){
+				a.classList.add('active');
+				a.setAttribute('aria-current','page');
+			}
+		}catch(e){/* ignore */}
+	});
+
+	// Scroll suave para anclas internas
+	document.documentElement.style.scrollBehavior = 'smooth';
 });
 
