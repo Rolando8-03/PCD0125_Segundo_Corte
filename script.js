@@ -111,5 +111,35 @@ document.addEventListener('DOMContentLoaded', function(){
 		if(lightbox) lightbox.addEventListener('click', function(e){ if(e.target === lightbox) close(); });
 		document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
 	}
+
+	// 7) Mensajes page: renderizar mensajes guardados y permitir borrado
+	if(document.getElementById('messages-list')){
+		try{
+			var messages = JSON.parse(localStorage.getItem('contact_messages') || '[]');
+		}catch(e){ messages = []; }
+		var list = document.getElementById('messages-list');
+		if(!messages || messages.length === 0){
+			list.innerHTML = '<div class="card muted-small">No hay mensajes guardados.</div>'; 
+		} else {
+			list.innerHTML = messages.map(function(m,idx){
+				return '<div class="card" style="margin-bottom:.6rem"><strong>'+escapeHtml(m.name)+'</strong> <span class="muted-small" style="margin-left:.5rem">'+new Date(m.created).toLocaleString()+'</span><p class="muted-small" style="margin-top:.3rem">'+escapeHtml(m.message)+'</p><a class="muted-small" style="font-size:.85rem;color:var(--accent);" href="mailto:'+encodeURI(m.email)+'">'+escapeHtml(m.email)+'</a></div>';
+			}).join('');
+		}
+
+		var clearBtn = document.getElementById('clear-messages');
+		if(clearBtn){
+			clearBtn.addEventListener('click', function(){
+				if(!confirm('¿Borrar todos los mensajes guardados en este navegador?')) return;
+				localStorage.removeItem('contact_messages');
+				list.innerHTML = '<div class="card muted-small">No hay mensajes guardados.</div>';
+			});
+		}
+	}
+
+	// pequeña utilidad para evitar inyección mínima al mostrar texto
+	function escapeHtml(str){
+		if(!str) return '';
+		return String(str).replace(/[&"'<>]/g, function (s) { return ({'&':'&amp;','"':'&quot;',"'":"&#39;","<":"&lt;",">":"&gt;"})[s]; });
+	}
 });
 

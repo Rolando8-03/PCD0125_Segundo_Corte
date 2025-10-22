@@ -1,3 +1,255 @@
+/* Clean single stylesheet for the project
+	 One :root block, neutral palette, responsive helpers
+*/
+
+:root {
+	--bg: #f7f8f9;
+	--surface: #ffffff;
+	--muted: #6b6b6b;
+	--text: #1f2933;
+	--accent: #2f4f4f;
+	--accent-2: #8aa29b;
+	--sand: #f0e6d8;
+	--border: #e6e7e8;
+	--shadow-sm: 0 6px 18px rgba(16,24,32,0.06);
+	--radius: 12px;
+}
+
+* { box-sizing: border-box }
+html, body { height: 100% }
+body {
+	font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	-webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 1rem }
+
+/* Header */
+.site-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: .75rem 0; position: sticky; top: 0; z-index: 40 }
+.site-header .container { display:flex; align-items:center; justify-content:space-between; gap:1rem }
+.brand { display:flex; align-items:center; gap:.75rem }
+.brand-logo { width:56px; height:56px; border-radius:12px; background: linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700 }
+.site-title { margin:0; font-size:1.1rem; font-weight:700 }
+
+/* Navigation */
+.main-nav ul { list-style: none; margin:0; padding:0; display:flex; gap:.6rem; align-items:center }
+.main-nav a { color: var(--muted); text-decoration: none; padding: .45rem .6rem; border-radius: 10px }
+.main-nav a.active { color: var(--accent); background: rgba(47,79,79,0.06) }
+
+/* Layout */
+.hero { padding:2.25rem 0; display:grid; gap:1rem }
+.hero h2 { margin:0 0 .25rem; font-size:2rem }
+.lead { font-size:1.05rem; color:#334653 }
+
+.btn { display:inline-flex; align-items:center; gap:.5rem; padding:.6rem .9rem; border-radius:999px; border:0; background:var(--accent); color:#fff }
+.btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--border) }
+
+/* Cards & grids */
+.cards-row { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem }
+.card { background: var(--surface); border-radius: var(--radius); padding:1rem; border:1px solid var(--border); box-shadow: var(--shadow-sm); display:flex; flex-direction:column }
+.card h3 { margin:.25rem 0 .5rem }
+.thumb-img { height:140px; background: var(--sand); border-radius:8px; margin-bottom:.75rem }
+
+.gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem }
+
+/* Forms */
+form { display:grid; gap:.6rem; max-width:640px }
+label { font-weight:600; color:var(--muted); font-size:.95rem }
+input[type="text"], input[type="email"], textarea { padding:.75rem; border:1px solid var(--border); border-radius:10px; background:transparent }
+button { background:var(--accent); color:#fff; padding:.6rem 1rem; border:0; border-radius:8px; cursor:pointer }
+
+/* Helpers */
+.muted-small { font-size:.95rem; color:var(--muted) }
+.badge { display:inline-block; background:#f4f6f5; color:var(--accent); padding:.25rem .5rem; border-radius:999px; font-size:.85rem; border:1px solid var(--border) }
+
+@media (min-width:900px) { .hero { grid-template-columns: 1fr 420px } }
+
+/* End */
+/* style.css - Clean unified stylesheet for the León guide
+   Single :root block, neutral-but-striking palette, responsive utilities
+*/
+
+:root{
+  --bg: #f7f8f9;        /* very light background */
+  --surface: #ffffff;   /* cards and panels */
+  --muted: #6b6b6b;     /* secondary text */
+  --text: #1f2933;      /* main text */
+  --accent: #2f4f4f;    /* deep neutral teal */
+  --accent-2: #8aa29b;  /* soft complementary mint */
+  --sand: #f0e6d8;      /* warm sand for thumbnails */
+  --border: #e6e7e8;
+  --shadow-sm: 0 6px 18px rgba(16,24,32,0.06);
+  --shadow-lg: 0 20px 40px rgba(16,24,32,0.08);
+  --radius: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+
+/* Header */
+.site-header{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  padding:.8rem 0;
+  position:sticky;top:0;z-index:50;
+}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand-logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.05rem}
+.site-title{margin:0;font-size:1.1rem;font-weight:700}
+.site-sub{font-size:.88rem;color:var(--muted)}
+
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;align-items:center}
+.main-nav a{color:var(--muted);text-decoration:none;padding:.45rem .6rem;border-radius:10px;font-weight:600}
+.main-nav a:hover{background:rgba(0,0,0,0.04);color:var(--text)}
+.main-nav a.active{background:linear-gradient(90deg, rgba(47,79,79,0.06), transparent);color:var(--accent)}
+
+/* Hero */
+.hero{padding:2.25rem 0;display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
+.hero-inner{display:flex;flex-direction:column;gap:.8rem}
+.hero h2{margin:0 0 .25rem;font-size:2rem;color:var(--text);line-height:1.05}
+.lead{font-size:1.05rem;color:#334653;max-width:68ch}
+.hero-cta{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border-radius:999px;border:0;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+.btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--border)}
+
+/* Sections and cards */
+section{margin-top:1.25rem}
+.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.card h3{margin:.25rem 0 .5rem;font-size:1.05rem;color:var(--text)}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.thumb-img{height:140px;background:var(--sand);border-radius:8px;margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;color:#7b6b54;font-weight:700}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+
+/* Food grid / places */
+.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.food-card{border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.food-card img{width:100%;height:160px;object-fit:cover;display:block}
+
+/* Contact form */
+form{display:grid;gap:.6rem;max-width:640px}
+label{font-weight:600;color:var(--muted);font-size:.95rem}
+input[type="text"],input[type="email"],textarea{padding:.75rem;border:1px solid var(--border);border-radius:10px;background:transparent}
+button{background:var(--accent);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px;cursor:pointer}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:100}
+.lightbox[aria-hidden="false"]{display:flex}
+.lightbox-content{background:var(--surface);padding:1rem;border-radius:12px;max-width:900px;width:95%;box-shadow:var(--shadow-lg)}
+.lightbox img{width:100%;height:auto;border-radius:8px;display:block}
+.lightbox-close{background:transparent;border:0;font-size:1.6rem;position:absolute;top:18px;right:18px;color:#fff}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted);background:transparent}
+
+/* Helpers and responsive */
+.muted-small{font-size:.95rem;color:var(--muted)}
+.badge{display:inline-block;background:#f4f6f5;color:var(--accent);padding:.25rem .5rem;border-radius:999px;font-size:.85rem;border:1px solid var(--border)}
+@media (min-width:900px){.hero{grid-template-columns:1fr 420px}}
+/* Minimal, cleaned stylesheet - single :root and consistent rules */
+
+:root{
+	--bg: #f7f8f9;
+	--surface: #ffffff;
+	--muted: #6b6b6b;
+	--text: #1f2933;
+	--accent: #2f4f4f;
+	--accent-2: #8aa29b;
+	--sand: #f0e6d8;
+	--border: #e6e7e8;
+	--shadow-sm: 0 6px 18px rgba(16,24,32,0.06);
+	--radius: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+
+/* Header */
+.site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:.75rem 0;position:sticky;top:0;z-index:40}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand-logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.05rem}
+.site-title{margin:0;font-size:1.1rem;font-weight:700;color:var(--text)}
+.site-sub{font-size:.9rem;color:var(--muted)}
+
+/* Navigation */
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;align-items:center}
+.main-nav a{color:var(--muted);text-decoration:none;padding:.45rem .6rem;border-radius:10px;font-weight:600}
+.main-nav a:hover{background:rgba(0,0,0,0.04);color:var(--text)}
+.main-nav a.active{background:linear-gradient(90deg, rgba(47,79,79,0.06), transparent);color:var(--accent)}
+
+/* Basic layout pieces */
+.hero{padding:2.25rem 0;display:grid;grid-template-columns:1fr;gap:1rem}
+.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.thumb-img{height:140px;background:var(--sand);border-radius:8px;margin-bottom:.75rem}
+
+/* Responsive helper */
+@media (min-width:900px){.hero{grid-template-columns:1fr 420px}}
+
+/* End */
+
+.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card h3{margin:.25rem 0 .5rem;font-size:1.05rem;color:var(--text)}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.thumb-img{height:140px;background:linear-gradient(180deg,#f2f3f4,#fff);border-radius:8px;margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;color:#7b6b54;font-weight:700}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+
+/* Food grid */
+.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.food-card{border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
+.food-card img{width:100%;height:160px;object-fit:cover;display:block}
+.food-card h3{margin:.6rem 1rem 0.25rem}
+.food-card p{margin:0 1rem 1rem;color:var(--muted)}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted);background:transparent}
+.footer-grid{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
+
+/* Form */
+form{display:grid;gap:.6rem;max-width:640px}
+label{font-weight:600;color:var(--muted);font-size:.95rem}
+input[type="text"],input[type="email"],textarea{padding:.75rem;border:1px solid var(--border);border-radius:10px;background:transparent}
+button{background:var(--accent);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px;cursor:pointer}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:100}
+.lightbox[aria-hidden="false"]{display:flex}
+.lightbox-content{background:var(--surface);padding:1rem;border-radius:12px;max-width:900px;width:95%;box-shadow:0 24px 48px rgba(2,6,23,0.4)}
+.lightbox img{width:100%;height:auto;border-radius:8px;display:block}
+.lightbox-close{background:transparent;border:0;font-size:1.6rem;position:absolute;top:18px;right:18px;color:#fff}
+
+/* Small helpers */
+.muted-small{font-size:.95rem;color:var(--muted)}
+.badge{display:inline-block;background:#f4f6f5;color:var(--accent);padding:.25rem .5rem;border-radius:999px;font-size:.85rem;border:1px solid var(--border)}
+
+/* Responsive */
+@media (min-width:900px){
+	.hero{grid-template-columns:1fr 420px}
+}
+
+@media (max-width:600px){
+	.site-title{font-size:1rem}
+	.hero h2{font-size:1.45rem}
+}
 /* Estilos profesionales y neutros para Guía Turística de León */
 :root{
 	--bg: #f7f7f8; /* muy claro, neutro */
@@ -111,15 +363,15 @@ body{font-family: 'Segoe UI', Arial, sans-serif;margin:0;background:var(--bg);co
 
 /* Bandera y confeti */
 .flag svg{border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-.flag-full{width:100%;overflow:hidden;display:block}
-.flag-full .flag-svg{width:100vw;min-width:100vw;height:220px;display:block}
-.hero{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.25rem 0 0}
-.hero .hero-left{padding-right:0;margin:0;width:100%}
-.hero .hero-left p, .hero .hero-left h2{margin-left:auto;margin-right:auto}
-.muted{color:var(--muted)}
-.cta{display:inline-block;background:var(--accent-2);color:#fff;padding:.5rem 0.9rem;border-radius:999px;text-decoration:none;font-weight:600}
-.hero-card{display:none}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+	--bg: #f6f7f8; /* page background */
+	--surface: #ffffff; /* cards and panels */
+	--muted: #6c7378; /* secondary text */
+	--text: #0f1720; /* main text */
+	--accent: #264653; /* deep teal */
+	--accent-2: #8ab6a9; /* soft mint */
+	--border: #e6e9eb;
+	--shadow: 0 12px 30px rgba(11,20,25,0.06);
+	--radius: 12px;
 
 /* Gastronomía */
 .food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem}
