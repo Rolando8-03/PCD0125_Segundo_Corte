@@ -11,7 +11,7 @@
 	--shadow: 0 6px 18px rgba(43,108,163,0.08);
 }
 *{box-sizing:border-box}
-body{font-family: 'Segoe UI', Arial, sans-serif;margin:0;background:var(--bg);color:#222;line-height:1.4}
+body{font-family: 'Segoe UI', Arial, sans-serif;margin:0;background:var(--bg);color:#222;line-height:1.4;overflow-x:hidden}
 .container{max-width:1100px;margin:0 auto;padding:1rem}
 .site-header{background:linear-gradient(90deg,var(--accent), #3b86b8);color:#fff;padding:1rem 0;box-shadow:var(--shadow)}
 .site-title{margin:0;font-size:1.35rem;font-weight:600}
@@ -21,11 +21,18 @@ body{font-family: 'Segoe UI', Arial, sans-serif;margin:0;background:var(--bg);co
 .hero{padding:2.25rem 0;display:grid;grid-template-columns:1fr 360px;gap:1.25rem;align-items:center}
 .hero .hero-left{padding-right:0.5rem}
 .hero h2{margin:0 0 .5rem;font-size:2rem;color:#10334b}
-.hero p.lead{font-size:1.05rem;color:#254b59;margin-bottom:.75rem}
+#hero p.lead{font-size:1.05rem;color:#254b59;margin-bottom:.75rem}
+
+/* Bandera y confeti */
+.flag svg{border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.flag-full{width:100%;overflow:hidden;display:block}
+.flag-full .flag-svg{width:100vw;min-width:100vw;height:220px;display:block}
+.hero{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:1.25rem 0 0}
+.hero .hero-left{padding-right:0;margin:0;width:100%}
+.hero .hero-left p, .hero .hero-left h2{margin-left:auto;margin-right:auto}
 .muted{color:var(--muted)}
 .cta{display:inline-block;background:var(--accent-2);color:#fff;padding:.5rem 0.9rem;border-radius:999px;text-decoration:none;font-weight:600}
-.hero-card{background:var(--card);border:1px solid var(--border);padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
-.hero-card .thumb{height:120px;background:linear-gradient(180deg,#e9f6fb,#f6fbff);border-radius:8px;margin-bottom:.5rem;display:flex;align-items:center;justify-content:center;color:#2b6ca3;font-weight:700}
+.hero-card{display:none}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
 .card{border:1px solid var(--border);padding:1rem;border-radius:10px;background:var(--card);box-shadow:var(--shadow)}
 .card h3{margin:.25rem 0 .5rem;font-size:1.05rem;color:#12323f}
