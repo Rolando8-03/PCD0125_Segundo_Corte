@@ -1,0 +1,26 @@
+/* Estilos básicos para Guía Turística de León */
+:root{
+	--bg:#ffffff;
+	--accent:#2b6ca3;
+	--muted:#666;
+}
+*{box-sizing:border-box}
+body{font-family:Segoe UI, Arial, sans-serif;margin:0;background:var(--bg);color:#222}
+.container{max-width:980px;margin:0 auto;padding:1rem}
+.site-header{background:var(--accent);color:#fff;padding:.75rem 0}
+.site-title{margin:0;font-size:1.25rem}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.main-nav a{color:#fff;text-decoration:none}
+.main-nav a.active, .main-nav a:hover{text-decoration:underline}
+.hero{padding:2rem 0}
+.muted{color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.card{border:1px solid #eee;padding:1rem;border-radius:6px;background:#fafafa}
+.thumb{height:120px;background:#ddd;border-radius:4px;margin-bottom:.5rem;display:flex;align-items:center;justify-content:center;color:#666}
+.dishes .card{display:flex;gap:1rem;align-items:center}
+.site-footer{border-top:1px solid #eee;padding:1rem 0;margin-top:2rem;color:var(--muted)}
+form{display:grid;gap:.5rem;max-width:480px}
+input[type="text"],input[type="email"],textarea{padding:.5rem;border:1px solid #ccc;border-radius:4px}
+button{background:var(--accent);color:#fff;padding:.5rem 1rem;border:0;border-radius:4px;cursor:pointer}
+.map-placeholder{height:200px;background:#f0f0f0;border:1px dashed #ccc;display:flex;align-items:center;justify-content:center;color:#888}
+
