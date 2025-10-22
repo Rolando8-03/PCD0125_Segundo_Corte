@@ -8,26 +8,27 @@
 	<meta name="description" content="Guía Turística de León - Inicio">
 </head>
 <body>
-	<header class="site-header">
-		<div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
-			<div style="display:flex;align-items:center;gap:.75rem;">
-				<div style="width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.05rem">L</div>
-				<div>
-					<h1 class="site-title">Guía Turística de León</h1>
-					<div class="muted-small">Historia, cultura y naturaleza en una ciudad vibrante</div>
+		<header class="site-header">
+			<div class="container">
+				<div class="brand">
+					<div class="brand-logo" aria-hidden="true">L</div>
+					<div>
+						<h1 class="site-title">Guía Turística de León</h1>
+						<div class="site-sub">Historia, cultura y naturaleza</div>
+					</div>
 				</div>
+
+				<nav class="main-nav" aria-label="Navegación principal">
+					<ul>
+						<li><a href="index.html" class="nav-link active" data-link="index">Inicio</a></li>
+						<li><a href="historia.html" class="nav-link" data-link="historia">Historia</a></li>
+						<li><a href="lugares.html" class="nav-link" data-link="lugares">Lugares</a></li>
+						<li><a href="gastronomia.html" class="nav-link" data-link="gastronomia">Gastronomía</a></li>
+						<li><a href="contacto.html" class="nav-link" data-link="contacto">Contacto</a></li>
+					</ul>
+				</nav>
 			</div>
-			<nav class="main-nav" aria-label="Navegación principal">
-				<ul>
-					<li><a href="index.html" class="nav-link" data-link="index">Inicio</a></li>
-					<li><a href="historia.html" class="nav-link" data-link="historia">Historia</a></li>
-					<li><a href="lugares.html" class="nav-link" data-link="lugares">Lugares</a></li>
-					<li><a href="gastronomia.html" class="nav-link" data-link="gastronomia">Gastronomía</a></li>
-					<li><a href="contacto.html" class="nav-link" data-link="contacto">Contacto</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+		</header>
 	<!-- Bandera simplificada (decorativa) -->
 	<div class="flag-full" aria-hidden="true" role="img">
 		<svg class="flag-svg" viewBox="0 0 11 7" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -38,15 +39,21 @@
 
 	<main class="container">
 		<section id="bienvenida" class="hero" aria-labelledby="welcome-title">
-			<div class="hero-left">
-				<h2 id="welcome-title">Bienvenido a León</h2>
-				<p class="lead">León es una ciudad de tradición intelectual, arquitectura colonial y naturaleza cercana. Aquí encontrarás rutas históricas, sabores locales y miradores volcánicos.</p>
-				<p class="muted-small">En esta guía encontrarás secciones breves y prácticas: historia esencial, lugares imperdibles, platos típicos y cómo llegar. La navegación superior te llevará a cada tema.</p>
-				<p style="margin-top:.7rem"><a class="cta" href="lugares.html">Explorar lugares</a> <a class="cta" href="gastronomia.html" style="background:var(--accent);margin-left:.5rem;">Ver gastronomía</a></p>
-				<ul style="margin-top:1rem;max-width:46rem;text-align:left;line-height:1.6">
-					<li><strong>Historia:</strong> Centro de la vida política y cultural de Nicaragua, con legados coloniales y republicanos.</li>
-					<li><strong>Cultura:</strong> Cuna de Rubén Darío y de una activa escena artística.</li>
-					<li><strong>Naturaleza:</strong> Volcanes cercanos y rutas para caminatas y fotografía.</li>
+			<div class="hero-inner">
+				<div>
+					<h2 id="welcome-title">Bienvenido a León</h2>
+					<p class="lead">León combina historia y naturaleza en un entorno accesible: catedrales coloniales, museos, mercados y rutas volcánicas a poca distancia de la ciudad. Esta guía breve te ayudará a planear una visita de 1 a 3 días.</p>
+				</div>
+
+				<div class="hero-cta">
+					<a class="btn" href="lugares.html">Explorar lugares</a>
+					<a class="btn secondary" href="gastronomia.html">Ver gastronomía</a>
+				</div>
+
+				<ul class="muted-small" style="max-width:68ch;">
+					<li><strong>Historia:</strong> Legado colonial y figuras literarias como Rubén Darío.</li>
+					<li><strong>Cultura:</strong> Museos, festivales y artesanías locales.</li>
+					<li><strong>Naturaleza:</strong> Volcanes activos, miradores y excursiones guiadas.</li>
 				</ul>
 			</div>
 		</section>
@@ -56,31 +63,50 @@
 			<p class="muted-small">Seleccionamos algunos sitios emblemáticos que puedes visitar en León.</p>
 			<div class="cards-row">
 				<article class="card" aria-labelledby="catedral">
-					<div class="thumb-img">Catedral</div>
+					<div class="thumb-img" role="img" aria-label="Catedral de León">Catedral</div>
 					<h3 id="catedral">Catedral de León</h3>
 					<p>Icono religioso y cultural. Subir a su azotea ofrece vistas panorámicas de la ciudad y los volcanes.</p>
 				</article>
 				<article class="card" aria-labelledby="ruben">
-					<div class="thumb-img">Rubén Darío</div>
+					<div class="thumb-img" role="img" aria-label="Museo Rubén Darío">Rubén Darío</div>
 					<h3 id="ruben">Museo Rubén Darío</h3>
 					<p>Dedicado al poeta nacional; un recorrido por su vida y la influencia modernista en Nicaragua.</p>
 				</article>
 				<article class="card" aria-labelledby="telica">
-					<div class="thumb-img">Volcán</div>
+					<div class="thumb-img" role="img" aria-label="Volcán Telica">Volcán</div>
 					<h3 id="telica">Volcán Telica</h3>
 					<p>Excursiones y miradores. Telica es uno de los volcanes activos cercanos con paisajes impresionantes.</p>
 				</article>
 				<article class="card" aria-labelledby="calzada">
-					<div class="thumb-img">Calle</div>
+					<div class="thumb-img" role="img" aria-label="Calle La Calzada">Calle</div>
 					<h3 id="calzada">Calle La Calzada</h3>
 					<p>Centro social por excelencia, lleno de cafés, artesanías y vida nocturna tradicional.</p>
 				</article>
 			</div>
 		</section>
 
-		<section id="galeria" style="margin-top:1.25rem;">
+		<section id="itinerarios">
+			<h3>Itinerarios recomendados</h3>
+			<p class="muted-small">Tres opciones para diferentes tiempos: 1 día, fin de semana y 3 días.</p>
+			<div class="cards-row">
+				<article class="card">
+					<h3>1 día</h3>
+					<p class="muted-small">Mañana: Catedral y centro histórico. Tarde: Museo Rubén Darío y paseo por La Calzada. Noche: cena en un restaurante local.</p>
+				</article>
+				<article class="card">
+					<h3>Fin de semana</h3>
+					<p class="muted-small">Incluye el recorrido del 1 día + excursión al Volcán Telica o Cerro Negro (según temporada) y visita al Mercado Central.</p>
+				</article>
+				<article class="card">
+					<h3>3 días</h3>
+					<p class="muted-small">Además de lo anterior, añade visitas a museos locales, talleres de artesanía y tiempo para explorar rutas naturales cercanas.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="galeria">
 			<h3>Galería</h3>
-			<p class="muted-small">Imágenes y postales de la ciudad (placeholder ilustrativo).</p>
+			<p class="muted-small">Imágenes y postales de la ciudad (placeholders disponibles en la carpeta `images/`).</p>
 			<div class="gallery">
 				<div class="card"><div class="thumb-img">Plaza</div><p class="muted-small">Plaza Central</p></div>
 				<div class="card"><div class="thumb-img">Iglesia</div><p class="muted-small">Iglesias coloniales</p></div>
