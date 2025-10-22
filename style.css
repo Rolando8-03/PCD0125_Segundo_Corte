@@ -339,4 +339,31 @@ button{background:var(--accent-2);color:#fff;padding:.6rem 1rem;border:0;border-
 
 /* EOF */
 
+/* Flag banner: centered blue-white-blue with centered italic text */
+.flag-banner{display:flex;justify-content:center;padding:1rem 0;background:transparent}
+.flag-inner{width:min(760px,92%);display:grid;grid-template-rows:1fr 1fr 1fr;border-radius:10px;overflow:hidden;box-shadow:0 8px 20px rgba(16,32,48,0.06)}
+.flag-stripe{display:flex;align-items:center;justify-content:center;height:72px}
+.flag-stripe.blue{background:#0f74b6}
+.flag-stripe.white{background:#ffffff}
+.flag-text{font-style:italic;font-weight:700;color:#0f3044;font-size:1.25rem;letter-spacing:0.6px}
+
+@media (max-width:600px){
+	.flag-inner{grid-template-rows:56px 56px 56px}
+	.flag-text{font-size:1rem}
+}
+
+@media (min-width:900px){
+	.flag-inner{height:120px}
+	.flag-stripe{height:40px}
+	.flag-text{font-size:1.4rem}
+}
+
+/* Asegurar que el párrafo principal en la sección de bienvenida sea negro y legible */
+#bienvenida .lead{color:#000000 !important;}
+
+/* Centrar únicamente el contenido dentro de la sección de bienvenida (alineado con la bandera) */
+#bienvenida .hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center}
+#bienvenida .hero-cta{justify-content:center}
+#bienvenida .muted-small{max-width:68ch;margin-left:0;margin-right:0;text-align:left}
+
 
