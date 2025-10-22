@@ -9,36 +9,45 @@
 </head>
 <body>
 	<header class="site-header">
-		<div class="container">
-			<h1 class="site-title">Guía Turística de León</h1>
-			<nav class="main-nav">
+		<div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+			<div style="display:flex;align-items:center;gap:.75rem;">
+				<div style="width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.05rem">L</div>
+				<div>
+					<h1 class="site-title">Guía Turística de León</h1>
+					<div class="muted-small">Historia, cultura y naturaleza en una ciudad vibrante</div>
+				</div>
+			</div>
+			<nav class="main-nav" aria-label="Navegación principal">
 				<ul>
 					<li><a href="index.html" class="nav-link" data-link="index">Inicio</a></li>
 					<li><a href="historia.html" class="nav-link" data-link="historia">Historia</a></li>
-					<li><a href="lugares.html" class="nav-link" data-link="lugares">Lugares turísticos</a></li>
+					<li><a href="lugares.html" class="nav-link" data-link="lugares">Lugares</a></li>
 					<li><a href="gastronomia.html" class="nav-link" data-link="gastronomia">Gastronomía</a></li>
-					<li><a href="contacto.html" class="nav-link" data-link="contacto">Contacto / Mapa</a></li>
+					<li><a href="contacto.html" class="nav-link" data-link="contacto">Contacto</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
-	<!-- Bandera full-width -->
-	<div class="flag-full" aria-hidden="false" role="img" aria-label="Bandera de Nicaragua con texto">
-		<svg class="flag-svg" viewBox="0 0 11 7" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bandera de Nicaragua con texto">
+	<!-- Bandera simplificada (decorativa) -->
+	<div class="flag-full" aria-hidden="true" role="img">
+		<svg class="flag-svg" viewBox="0 0 11 7" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
 			<rect width="11" height="7" fill="#0f74b6"/>
 			<rect y="2" width="11" height="3" fill="#ffffff"/>
-			<!-- Emblema eliminado para mejorar legibilidad del texto -->
-			<!-- Texto centrado en la banda blanca (cursiva, legible) -->
-			<text x="5.5" y="3.5" text-anchor="middle" dominant-baseline="middle" font-family="Georgia, 'Times New Roman', Times, serif" font-style="italic" font-weight="700" font-size="0.9" fill="#0f74b6">Bienvenidos a Leon</text>
 		</svg>
 	</div>
 
 	<main class="container">
 		<section id="bienvenida" class="hero" aria-labelledby="welcome-title">
 			<div class="hero-left">
-				<p class="lead">Descubre la historia, la arquitectura y la cultura de una de las ciudades más importantes de Nicaragua. Explora sus iglesias, museos, volcanes cercanos y la gastronomía local.</p>
-				<p class="muted-small">Esta guía es un resumen visual para turistas y curiosos. Usa la navegación para ver secciones completas.</p>
-				<p><a class="cta" href="lugares.html">Ver lugares turísticos</a> <span style="margin-left:.5rem" class="badge">Catedral • Rubén Darío • Volcanes</span></p>
+				<h2 id="welcome-title">Bienvenido a León</h2>
+				<p class="lead">León es una ciudad de tradición intelectual, arquitectura colonial y naturaleza cercana. Aquí encontrarás rutas históricas, sabores locales y miradores volcánicos.</p>
+				<p class="muted-small">En esta guía encontrarás secciones breves y prácticas: historia esencial, lugares imperdibles, platos típicos y cómo llegar. La navegación superior te llevará a cada tema.</p>
+				<p style="margin-top:.7rem"><a class="cta" href="lugares.html">Explorar lugares</a> <a class="cta" href="gastronomia.html" style="background:var(--accent);margin-left:.5rem;">Ver gastronomía</a></p>
+				<ul style="margin-top:1rem;max-width:46rem;text-align:left;line-height:1.6">
+					<li><strong>Historia:</strong> Centro de la vida política y cultural de Nicaragua, con legados coloniales y republicanos.</li>
+					<li><strong>Cultura:</strong> Cuna de Rubén Darío y de una activa escena artística.</li>
+					<li><strong>Naturaleza:</strong> Volcanes cercanos y rutas para caminatas y fotografía.</li>
+				</ul>
 			</div>
 		</section>
 		
