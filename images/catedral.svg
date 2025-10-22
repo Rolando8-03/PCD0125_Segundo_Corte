@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
+  <rect width="100%" height="100%" fill="#fff"/>
+  <!-- Simplified stylized Catedral silhouette -->
+  <g transform="translate(50,60) scale(0.8)">
+    <rect x="0" y="120" width="500" height="220" fill="#f3f5f6" stroke="#e0e6ea"/>
+    <rect x="60" y="40" width="120" height="280" fill="#eaf6fb" stroke="#cfe8f6"/>
+    <rect x="320" y="40" width="120" height="280" fill="#eaf6fb" stroke="#cfe8f6"/>
+    <rect x="190" y="0" width="120" height="300" fill="#fff" stroke="#dfe8ee"/>
+    <polygon points="0,120 250,10 500,120" fill="#f0f7fb" stroke="#d9eaf7"/>
+    <circle cx="250" cy="160" r="30" fill="#eaf6fb" stroke="#cfe8f6"/>
+    <rect x="220" y="170" width="60" height="120" fill="#fff" stroke="#dfe8ee"/>
+    <!-- small windows -->
+    <g fill="#cfe8f6">
+      <rect x="90" y="120" width="40" height="40" rx="6"/>
+      <rect x="250" y="120" width="40" height="40" rx="6"/>
+      <rect x="360" y="120" width="40" height="40" rx="6"/>
+    </g>
+  </g>
+</svg>

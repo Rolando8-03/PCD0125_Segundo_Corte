@@ -1,4 +1,4 @@
-// Script básico para el sitio
+// Script básico para el sitio (sin confeti)
 document.addEventListener('DOMContentLoaded',function(){
 	// Insertar año en todos los pies de página
 	var years = document.querySelectorAll('#year, #year-h, #year-l, #year-g, #year-c');
