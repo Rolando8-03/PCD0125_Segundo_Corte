@@ -3,18 +3,18 @@
 */
 
 :root{
-  --bg: #fff7f3;
-  --surface: #ffffff;
-  --muted: #6a6f73;
-  --text: #10232e;
-  --accent: #163d63;
-  --accent-2: #b84b2e;
-  --gold: #e0b865;
-  --sand: #f3e7d8;
-  --border: #e8e3dd;
-  --shadow-sm: 0 8px 24px rgba(16,32,48,0.06);
-  --shadow-lg: 0 24px 48px rgba(16,32,48,0.09);
-  --radius: 12px;
+	--bg: #fbfbfc;          /* very light slate */
+	--surface: #ffffff;     /* card surface */
+	--muted: #7b8a90;       /* muted gray-blue */
+	--text: #25404a;        /* soft navy for text */
+	--accent: #a8d0e6;      /* pastel blue */
+	--accent-2: #ffd6c2;    /* pastel peach */
+	--accent-3: #f6e7c1;    /* soft warm accent */
+	--sand: #fff6ee;        /* pale sand */
+	--border: #e9eef2;      /* very soft border */
+	--shadow-sm: 0 6px 18px rgba(37,64,74,0.06);
+	--shadow-lg: 0 20px 40px rgba(37,64,74,0.08);
+	--radius: 10px;
 }
 
 *{box-sizing:border-box}
@@ -365,5 +365,59 @@ button{background:var(--accent-2);color:#fff;padding:.6rem 1rem;border:0;border-
 #bienvenida .hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center}
 #bienvenida .hero-cta{justify-content:center}
 #bienvenida .muted-small{max-width:68ch;margin-left:0;margin-right:0;text-align:left}
+
+/*
+	Palette override for interface: cream background + soft red accents.
+	This final :root block intentionally overrides earlier variable definitions
+	so the site's interface (header, nav, buttons) uses a cream + soft-red theme.
+*/
+:root{
+	--bg: #fffaf2;        /* warm cream page background */
+	--surface: #ffffff;   /* surfaces/cards */
+	--text: #24343a;      /* primary text (kept readable) */
+	--muted: #7b8a90;     /* muted text */
+	--accent: #e9a59f;    /* soft red / coral for primary interface accents */
+	--accent-2: #d78279;  /* slightly deeper soft-red for gradients/hover */
+	--accent-3: #f6e6dd;  /* pale cream for subtle highlights */
+	--border: #efe6e2;    /* light warm border */
+	--shadow-sm: 0 6px 18px rgba(36,52,58,0.06);
+	--shadow-lg: 0 20px 40px rgba(36,52,58,0.08);
+	--radius: 10px;
+}
+
+/* Dark theme: variables override when [data-theme="dark"] is present on <html>
+	 Also respected automatically via prefers-color-scheme in JS if user has no saved choice.
+*/
+[data-theme="dark"]{
+	--bg: #071018;          /* very dark blue-green */
+	--surface: #0b1620;     /* card surface */
+	--text: #e6f2f5;        /* light text */
+	--muted: #98a6ad;       /* muted light */
+	--accent: #e9a59f;      /* soft coral works as highlight on dark */
+	--accent-2: #d78279;    /* hover/deeper accent */
+	--accent-3: #062028;    /* deep accent for backgrounds */
+	--border: rgba(255,255,255,0.06);
+	--shadow-sm: 0 8px 20px rgba(0,0,0,0.6);
+	--shadow-lg: 0 24px 48px rgba(0,0,0,0.65);
+}
+
+/* Theme toggle button (inserted dynamically by JS). Small, accessible, unobtrusive */
+.theme-toggle{
+	--size: 42px;
+	width:var(--size);height:var(--size);border-radius:999px;border:0;display:inline-flex;align-items:center;justify-content:center;
+	background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.04));
+	color:var(--text);cursor:pointer;box-shadow:var(--shadow-sm);font-size:1.1rem;
+}
+.site-header .theme-toggle{margin-left:.6rem}
+
+@media (max-width:600px){
+	.theme-toggle{width:36px;height:36px;font-size:1rem}
+}
+
+/* Respect OS preference by providing a light fallback in CSS if JS doesn't run.
+	 This only sets the preferred color-scheme meta for user agents; JS will set data-theme at runtime.
+*/
+/* prefers-color-scheme handling is done via JS and [data-theme="dark"]; no empty rules needed here */
+
 
 

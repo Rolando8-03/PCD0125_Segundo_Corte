@@ -4,6 +4,54 @@ document.addEventListener('DOMContentLoaded', function(){
 	var years = document.querySelectorAll('#year, #year-h, #year-l, #year-g, #year-c');
 	years.forEach(function(el){ if(el) el.textContent = new Date().getFullYear(); });
 
+	/* ----------------------- Theme / Modo oscuro -----------------------
+	   - Apply user's saved theme (localStorage 'site_theme') if present.
+	   - Otherwise respect OS preference (prefers-color-scheme).
+	   - Provide an accessible toggle button appended to the header container.
+	*/
+	(function(){
+		var themeKey = 'site_theme';
+		function applyTheme(t){
+			if(t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+			else document.documentElement.removeAttribute('data-theme');
+		}
+
+		// Initialize theme from localStorage or OS preference
+		var saved = null;
+		try{ saved = localStorage.getItem(themeKey); }catch(e){ /* ignore */ }
+		if(saved){ applyTheme(saved); }
+		else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){ applyTheme('dark'); }
+
+		// Create theme toggle button and insert into header (or body if header not found)
+		var container = document.querySelector('.site-header .container') || document.body;
+		var btn = document.createElement('button');
+		btn.className = 'theme-toggle';
+		btn.type = 'button';
+		function updateBtn(){
+			var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+			btn.innerHTML = isDark ? '☀️' : '🌙';
+			btn.setAttribute('aria-label', isDark ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+			btn.setAttribute('aria-pressed', String(isDark));
+		}
+		updateBtn();
+		container.appendChild(btn);
+
+		btn.addEventListener('click', function(){
+			var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+			if(isDark){ applyTheme('light'); try{ localStorage.removeItem(themeKey); }catch(e){} }
+			else { applyTheme('dark'); try{ localStorage.setItem(themeKey,'dark'); }catch(e){} }
+			updateBtn();
+		});
+
+		// If user has no explicit choice, listen to OS theme changes and adapt
+		if(window.matchMedia){
+			var mq = window.matchMedia('(prefers-color-scheme: dark)');
+			var mqHandler = function(e){ if(!localStorage.getItem(themeKey)){ applyTheme(e.matches ? 'dark' : 'light'); updateBtn(); } };
+			if(typeof mq.addEventListener === 'function') mq.addEventListener('change', mqHandler);
+			else if(typeof mq.addListener === 'function') mq.addListener(mqHandler);
+		}
+	})();
+
 	// 2) Formulario de contacto (envío simulado y validación ligera)
 	var form = document.getElementById('contact-form');
 	if(form){
