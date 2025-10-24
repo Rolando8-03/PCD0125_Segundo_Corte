@@ -1,47 +1,41 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mensajes guardados — Guía Turística de León</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mensajes — León City Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
   <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <div class="brand-logo" aria-hidden="true">L</div>
-        <div>
-          <h1 class="site-title">Guía Turística de León</h1>
-          <div class="site-sub">Mensajes guardados</div>
-        </div>
-      </div>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">León City Guide</a>
       <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="historia.html">Historia</a></li>
-          <li><a href="lugares.html">Lugares</a></li>
-          <li><a href="gastronomia.html">Gastronomía</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="lugares.html">Lugares</a>
+        <a href="gastronomia.html">Gastronomía</a>
+        <a href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>Mensajes guardados (local)</h2>
-      <p class="muted-small">Aquí se muestran los mensajes enviados desde el formulario. Solo los ves tú en este navegador.</p>
-      <div id="messages-list" style="margin-top:1rem"></div>
-      <div style="margin-top:1rem">
-        <button id="clear-messages" class="btn secondary">Borrar todos los mensajes</button>
-      </div>
-    </section>
+  <main class="container reveal">
+    <h1>Mensajes recibidos</h1>
+    <p class="muted">Aquí se mostrarían los mensajes enviados desde el formulario (simulado en estático).</p>
+    <ul class="messages">
+      <li><strong>Ana:</strong> ¿Cuánto cuesta la entrada al volcán?</li>
+      <li><strong>Carlos:</strong> Necesito recomendaciones para surf en septiembre.</li>
+    </ul>
   </main>
 
   <footer class="site-footer">
-    <div class="container">&copy; <span id="year-m"></span> Guía Turística de León</div>
+    <div class="container footer-inner">
+      <div>© 2025 León City Guide</div>
+    </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

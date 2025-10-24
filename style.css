@@ -1,369 +1,114 @@
-/* Clean unified stylesheet for the León guide
-   Single :root and consistent rules. Removed duplicates and stray fragments.
-*/
-
+/* Paleta modo oscuro e tipografías */
 :root{
-  --bg: #fff7f3;
-  --surface: #ffffff;
-  --muted: #6a6f73;
-  --text: #10232e;
-  --accent: #163d63;
-  --accent-2: #b84b2e;
-  --gold: #e0b865;
-  --sand: #f3e7d8;
-  --border: #e8e3dd;
-  --shadow-sm: 0 8px 24px rgba(16,32,48,0.06);
-  --shadow-lg: 0 24px 48px rgba(16,32,48,0.09);
-  --radius: 12px;
+  --bg:#0E0E0E;
+  --bg-2:#1B1B1B;
+  --text:#EAEAEA;
+  --muted:#BFBFBF;
+  --accent:#F5B800;
+  --accent-hover:#FF5E00;
+  --cold:#2A84FF;
+  --line:#2A2A2A;
+  --radius:12px;
+  --container:1100px;
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
 }
 
 *{box-sizing:border-box}
 html,body{height:100%}
-body{
-  font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
-  margin:0;
-  background:linear-gradient(180deg,var(--bg),#fff);
+body.dark{
+  background:var(--bg);
   color:var(--text);
+  margin:0;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  font-size:16px;
+  line-height:1.4;
 }
 
-.container{max-width:1100px;margin:0 auto;padding:1rem}
+/* layout */
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+.site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(14,14,14,.85), rgba(14,14,14,.6));backdrop-filter: blur(6px);z-index:40;border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:1rem;padding:.75rem 0}
+.logo{display:flex;align-items:center;gap:.5rem;color:var(--text);text-decoration:none;font-weight:700;font-family:'Comfortaa',sans-serif}
+.main-nav{margin-left:auto;display:flex;gap:1rem;align-items:center}
+.main-nav a{color:var(--muted);text-decoration:none;padding:.25rem .5rem;border-radius:8px}
+.main-nav a:hover{color:var(--text)}
+.cta{background:var(--accent);color:#111;border:none;padding:.5rem .9rem;border-radius:10px;cursor:pointer;margin-left:1rem}
+.cta:hover{background:var(--accent-hover);color:#fff}
+.menu-toggle{display:none;background:none;border:0;color:var(--muted);font-size:1.25rem}
 
-/* Header */
-.site-header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:.9rem 0;position:sticky;top:0;z-index:60;box-shadow:var(--shadow-sm)}
-.site-header .container{display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:.75rem}
-.brand-logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--gold),rgba(255,255,255,0.12));display:flex;align-items:center;justify-content:center;color:var(--accent-2);font-weight:800}
-.site-title{margin:0;font-size:1.15rem;font-weight:700}
+/* hero */
+.hero{position:relative;height:88vh;display:flex;align-items:center;color:var(--text);overflow:hidden}
+.hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(4,4,4,.2), rgba(4,4,4,.6))}
+.hero-content{position:relative;z-index:2;padding:2rem 1rem}
+.hero h1{font-family:'Comfortaa';font-size:clamp(2rem,5vw,3.6rem);margin:0 0 .5rem}
+.lead{color:var(--muted);margin-bottom:1rem}
+.hero-actions .btn{margin-right:.5rem}
 
-/* Navigation */
-.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;align-items:center}
-.main-nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:700}
-.main-nav a:hover{background:rgba(255,255,255,0.06)}
-.main-nav a.active{background:rgba(255,255,255,0.12)}
+/* buttons */
+.btn{display:inline-block;text-decoration:none;padding:.6rem 1rem;border-radius:10px;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--accent);color:#0b0b0b}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,.06);color:var(--text)}
+.btn-sm{padding:.4rem .6rem;font-size:.9rem}
 
-/* Hero */
-.hero{padding:2.5rem 0;display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
-.hero h2{margin:0 0 .25rem;font-size:2rem;color:var(--surface)}
-.lead{font-size:1.06rem;color:rgba(255,255,255,0.92);max-width:68ch}
-.btn{display:inline-flex;align-items:center;padding:.6rem .95rem;border-radius:999px;border:0;background:rgba(255,255,255,0.08);color:#fff;font-weight:700}
-.btn.primary{background:var(--gold);color:var(--accent-2)}
+/* summary */
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;padding:2rem 0}
+.summary-card{background:linear-gradient(180deg, rgba(255,255,255,.02), transparent);padding:1.25rem;border-radius:12px;border:1px solid var(--line);text-align:center}
+.summary-card .icon{font-size:2rem;margin-bottom:.5rem}
 
-/* Content */
-section{margin-top:1.25rem}
-.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
-.card h3{margin:.25rem 0 .5rem;font-size:1.05rem;color:var(--text)}
-.card p{margin:0;color:var(--muted)}
+/* slider */
+.gallery{margin:2rem 0}
+.slider{position:relative;overflow:hidden;border-radius:12px}
+.slide{display:none}
+.slide.active{display:block}
+.slide img{width:100%;height:420px;object-fit:cover;display:block}
+.slider-controls{display:flex;justify-content:center;gap:.5rem;padding:.5rem}
 
-.thumb-img{height:140px;background:linear-gradient(180deg,var(--sand),#fff);border-radius:8px;margin-bottom:.75rem}
+/* cards & grids */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.place-card, .food-card{background:var(--bg-2);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.place-card img, .food-card img{width:100%;height:180px;object-fit:cover;display:block}
+.card-body{padding:1rem}
+.person .avatar{width:100%;height:160px;object-fit:cover;border-radius:8px}
 
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+/* timeline */
+.timeline{padding:2rem 0}
+.timeline-track{display:flex;flex-direction:column;gap:.75rem}
+.timeline-item{background:linear-gradient(90deg, rgba(255,255,255,.02), transparent);padding:.75rem;border-radius:10px;border:1px solid var(--line)}
 
-/* Food grid */
-.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 360px;gap:1.25rem}
+.contact-form label{display:block;margin-bottom:.75rem}
+.contact-form input, .contact-form textarea{
+  width:100%;
+  padding:.6rem;
+  border-radius:8px;
+  border:1px solid var(--line);
+  background:#0f0f0f;
+  color:var(--text);
+}
+.contact-info .contact-list{list-style:none;padding:0;margin:.5rem 0;color:var(--muted)}
 
+/* footer */
+.site-footer{border-top:1px solid var(--line);padding:1.25rem 0;margin-top:2rem;color:var(--muted)}
 
-/* Forms */
-form{display:grid;gap:.6rem;max-width:640px}
-label{font-weight:600;color:var(--muted)}
-input,textarea{padding:.75rem;border:1px solid var(--border);border-radius:10px}
-button{background:var(--accent-2);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px}
+/* micro interactions */
+.reveal{opacity:0;transform:translateY(12px);transition:all .6s ease}
+.reveal.show{opacity:1;transform:none}
 
-/* Lightbox */
-.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:120}
-.lightbox[aria-hidden="false"]{display:flex}
-
-/* Footer */
-.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted)}
-
-@media (min-width:900px){.hero{grid-template-columns:1fr 420px}}
-
-/* End */
-:root{
-	--bg: #f7f8f9;
-	--surface: #ffffff;
-	--muted: #6b6b6b;
-	--text: #1f2933;
-	--accent: #2f4f4f;
-	--accent-2: #8aa29b;
-	--sand: #f0e6d8;
-	--border: #e6e7e8;
-	--shadow-sm: 0 6px 18px rgba(16,24,32,0.06);
-	--radius: 12px;
+/* responsive */
+@media (max-width:900px){
+  .header-inner{gap:.5rem}
+  .main-nav{display:none}
+  .menu-toggle{display:block;margin-left:auto}
+  .contact-grid{grid-template-columns:1fr}
+  .hero{height:60vh}
+  .slide img{height:240px}
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-.container{max-width:1100px;margin:0 auto;padding:1rem}
-
-/* Header */
-.site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:.75rem 0;position:sticky;top:0;z-index:40}
-.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.75rem}
-.brand-logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.05rem}
-.site-title{margin:0;font-size:1.1rem;font-weight:700;color:var(--text)}
-.site-sub{font-size:.9rem;color:var(--muted)}
-
-/* Navigation */
-.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;align-items:center}
-.main-nav a{color:var(--muted);text-decoration:none;padding:.45rem .6rem;border-radius:10px;font-weight:600}
-.main-nav a:hover{background:rgba(0,0,0,0.04);color:var(--text)}
-.main-nav a.active{background:linear-gradient(90deg, rgba(47,79,79,0.06), transparent);color:var(--accent)}
-
-/* Basic layout pieces */
-.hero{padding:2.25rem 0;display:grid;grid-template-columns:1fr;gap:1rem}
-.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
-.thumb-img{height:140px;background:var(--sand);border-radius:8px;margin-bottom:.75rem}
-
-/* Responsive helper */
-@media (min-width:900px){.hero{grid-template-columns:1fr 420px}}
-
-/* End */
-
-.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column}
-.card h3{margin:.25rem 0 .5rem;font-size:1.05rem;color:var(--text)}
-.card p{margin:0;color:var(--muted);font-size:.95rem}
-.thumb-img{height:140px;background:linear-gradient(180deg,#f2f3f4,#fff);border-radius:8px;margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;color:#7b6b54;font-weight:700}
-
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
-
-/* Food grid */
-.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-.food-card{border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
-.food-card img{width:100%;height:160px;object-fit:cover;display:block}
-.food-card h3{margin:.6rem 1rem 0.25rem}
-.food-card p{margin:0 1rem 1rem;color:var(--muted)}
-
-/* Footer */
-.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted);background:transparent}
-.footer-grid{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
-
-/* Form */
-form{display:grid;gap:.6rem;max-width:640px}
-label{font-weight:600;color:var(--muted);font-size:.95rem}
-input[type="text"],input[type="email"],textarea{padding:.75rem;border:1px solid var(--border);border-radius:10px;background:transparent}
-button{background:var(--accent);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px;cursor:pointer}
-
-/* Lightbox */
-.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:100}
-.lightbox[aria-hidden="false"]{display:flex}
-.lightbox-content{background:var(--surface);padding:1rem;border-radius:12px;max-width:900px;width:95%;box-shadow:0 24px 48px rgba(2,6,23,0.4)}
-.lightbox img{width:100%;height:auto;border-radius:8px;display:block}
-.lightbox-close{background:transparent;border:0;font-size:1.6rem;position:absolute;top:18px;right:18px;color:#fff}
-
-/* Small helpers */
-.muted-small{font-size:.95rem;color:var(--muted)}
-.badge{display:inline-block;background:#f4f6f5;color:var(--accent);padding:.25rem .5rem;border-radius:999px;font-size:.85rem;border:1px solid var(--border)}
-
-/* Responsive */
-@media (min-width:900px){
-	.hero{grid-template-columns:1fr 420px}
-}
-
-@media (max-width:600px){
-	.site-title{font-size:1rem}
-	.hero h2{font-size:1.45rem}
-}
-/* Estilos profesionales y neutros para Guía Turística de León */
-:root{
-	--bg: #f7f7f8; /* muy claro, neutro */
-	--surface: #ffffff; /* tarjetas y superficies */
-	--muted: #6b6b6b; /* texto secundario */
-	--text: #1f2933; /* texto principal */
-	--accent: #2f4f4f; /* acento neutro oscuro (verde gris) */
-	--accent-2: #8aa29b; /* acento suave */
-	--border: #e6e7e8;
-	--shadow: 0 8px 24px rgba(16,24,32,0.06);
-	--radius: 10px;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.container{max-width:1100px;margin:0 auto;padding:1rem}
-
-/* Header */
-.site-header{background:var(--surface);border-bottom:1px solid var(--border);padding:0.75rem 0;position:sticky;top:0;z-index:40}
-.site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.brand{display:flex;align-items:center;gap:.75rem}
-.brand-logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.05rem}
-.site-title{margin:0;font-size:1.1rem;font-weight:700;color:var(--text)}
-.site-sub{font-size:.9rem;color:var(--muted)}
-
-.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;align-items:center}
-.main-nav a{color:var(--muted);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:600;font-size:.95rem}
-.main-nav a:hover{background:rgba(0,0,0,0.04);color:var(--text)}
-.main-nav a.active{background:linear-gradient(90deg, rgba(34,51,45,0.06), transparent);color:var(--accent)}
-
-/* Hero */
-.hero{padding:2.25rem 0;display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
-.hero-inner{display:flex;flex-direction:column;gap:.8rem}
-.hero h2{margin:0 0 .25rem;font-size:2rem;color:var(--text);line-height:1.05}
-.lead{font-size:1.05rem;color:#334653;max-width:70ch}
-.hero-cta{display:flex;gap:.6rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border-radius:999px;border:0;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
-.btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--border)}
-
-/* Sections and cards */
-section{margin-top:1.25rem}
-.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column}
-.card h3{margin:.25rem 0 .5rem;font-size:1.05rem;color:var(--text)}
-.card p{margin:0;color:var(--muted);font-size:.95rem}
-.thumb-img{height:140px;background:linear-gradient(180deg,#f2f3f4,#fff);border-radius:8px;margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;color:#7b6b54;font-weight:700}
-
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
-
-/* Food grid */
-.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-.food-card{border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
-.food-card img{width:100%;height:160px;object-fit:cover;display:block}
-.food-card h3{margin:.6rem 1rem 0.25rem}
-.food-card p{margin:0 1rem 1rem;color:var(--muted)}
-
-/* Footer */
-.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted);background:transparent}
-.footer-grid{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between}
-
-/* Form */
-form{display:grid;gap:.6rem;max-width:560px}
-label{font-weight:600;color:var(--muted);font-size:.9rem}
-input[type="text"],input[type="email"],textarea{padding:.75rem;border:1px solid var(--border);border-radius:8px;background:transparent}
-button{background:var(--accent);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px;cursor:pointer}
-
-/* Lightbox */
-.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:100}
-.lightbox[aria-hidden="false"]{display:flex}
-.lightbox-content{background:var(--surface);padding:1rem;border-radius:12px;max-width:900px;width:95%;box-shadow:0 24px 48px rgba(2,6,23,0.4)}
-.lightbox img{width:100%;height:auto;border-radius:8px;display:block}
-.lightbox-close{background:transparent;border:0;font-size:1.6rem;position:absolute;top:18px;right:18px;color:#fff}
-
-/* Small helpers */
-.muted-small{font-size:.95rem;color:var(--muted)}
-.badge{display:inline-block;background:#f4f6f5;color:var(--accent);padding:.25rem .5rem;border-radius:999px;font-size:.85rem;border:1px solid var(--border)}
-
-/* Responsive */
-@media (min-width:900px){
-	.hero{grid-template-columns:1fr 420px}
-}
-
-@media (max-width:600px){
-	.site-title{font-size:1rem}
-	.hero h2{font-size:1.45rem}
-}
-/* Estilos básicos para Guía Turística de León (colores pasteles) */
-:root{
-	/* Paleta inspirada en León, Nicaragua: tonos azul petróleo, arena, crema y verde suave */
-	--bg: #fffaf6; /* crema muy suave */
-	--card: #fffefe;
-	--accent: #2b6ca3; /* azul petróleo (acento) */
-	--accent-2: #7fb7a4; /* verde suave */
-	--sand: #f0e6d8; /* arena */
-	--muted: #6b6b6b;
-	--border: #e9e6e2;
-	--shadow: 0 6px 18px rgba(43,108,163,0.08);
-}
-*{box-sizing:border-box}
-body{font-family: 'Segoe UI', Arial, sans-serif;margin:0;background:var(--bg);color:#222;line-height:1.4;overflow-x:hidden}
-.container{max-width:1100px;margin:0 auto;padding:1rem}
-.site-header{background:linear-gradient(90deg,var(--accent), #3b86b8);color:#fff;padding:1rem 0;box-shadow:var(--shadow)}
-.site-title{margin:0;font-size:1.35rem;font-weight:600}
-.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem;align-items:center}
-.main-nav a{color:#fff;text-decoration:none;padding:.25rem .35rem;border-radius:6px}
-.main-nav a.active, .main-nav a:hover{background:rgba(255,255,255,0.08);text-decoration:none}
-.hero{padding:2.25rem 0;display:grid;grid-template-columns:1fr 360px;gap:1.25rem;align-items:center}
-.hero .hero-left{padding-right:0.5rem}
-.hero h2{margin:0 0 .5rem;font-size:2rem;color:#10334b}
-#hero p.lead{font-size:1.05rem;color:#254b59;margin-bottom:.75rem}
-
-/* Clean unified stylesheet for the León guide - final version */
-
-:root{
-	--bg: #fff7f3;
-	--surface: #ffffff;
-	--muted: #6a6f73;
-	--text: #10232e;
-	--accent: #163d63;
-	--accent-2: #b84b2e;
-	--gold: #e0b865;
-	--sand: #f3e7d8;
-	--border: #e8e3dd;
-	--shadow-sm: 0 8px 24px rgba(16,32,48,0.06);
-	--shadow-lg: 0 24px 48px rgba(16,32,48,0.09);
-	--radius: 12px;
-}
-
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-	font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
-	margin:0;
-	background:linear-gradient(180deg,var(--bg),#fff);
-	color:var(--text);
-}
-
-.container{max-width:1100px;margin:0 auto;padding:1rem}
-
-.site-header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:.9rem 0;position:sticky;top:0;z-index:60;box-shadow:var(--shadow-sm)}
-.site-header .container{display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:.75rem}
-.brand-logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--gold),rgba(255,255,255,0.12));display:flex;align-items:center;justify-content:center;color:var(--accent-2);font-weight:800}
-
-.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;align-items:center}
-.main-nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:700}
-
-.hero{padding:2.5rem 0;display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
-.hero h2{margin:0 0 .25rem;font-size:2rem;color:var(--surface)}
-.lead{font-size:1.06rem;color:rgba(255,255,255,0.92);max-width:68ch}
-
-.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
-
-.thumb-img{height:140px;background:linear-gradient(180deg,var(--sand),#fff);border-radius:8px;margin-bottom:.75rem}
-
-.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-
-form{display:grid;gap:.6rem;max-width:640px}
-input,textarea{padding:.75rem;border:1px solid var(--border);border-radius:10px}
-button{background:var(--accent-2);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px}
-
-.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:120}
-.lightbox[aria-hidden="false"]{display:flex}
-
-.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted);background:transparent}
-
-@media (min-width:900px){.hero{grid-template-columns:1fr 420px}}
-
-/* EOF */
-
-/* Flag banner: centered blue-white-blue with centered italic text */
-.flag-banner{display:flex;justify-content:center;padding:1rem 0;background:transparent}
-.flag-inner{width:min(760px,92%);display:grid;grid-template-rows:1fr 1fr 1fr;border-radius:10px;overflow:hidden;box-shadow:0 8px 20px rgba(16,32,48,0.06)}
-.flag-stripe{display:flex;align-items:center;justify-content:center;height:72px}
-.flag-stripe.blue{background:#0f74b6}
-.flag-stripe.white{background:#ffffff}
-.flag-text{font-style:italic;font-weight:700;color:#0f3044;font-size:1.25rem;letter-spacing:0.6px}
-
-@media (max-width:600px){
-	.flag-inner{grid-template-rows:56px 56px 56px}
-	.flag-text{font-size:1rem}
-}
-
-@media (min-width:900px){
-	.flag-inner{height:120px}
-	.flag-stripe{height:40px}
-	.flag-text{font-size:1.4rem}
-}
-
-/* Asegurar que el párrafo principal en la sección de bienvenida sea negro y legible */
-#bienvenida .lead{color:#000000 !important;}
-
-/* Centrar únicamente el contenido dentro de la sección de bienvenida (alineado con la bandera) */
-#bienvenida .hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center}
-#bienvenida .hero-cta{justify-content:center}
-#bienvenida .muted-small{max-width:68ch;margin-left:0;margin-right:0;text-align:left}
+/* accessibility */
+img{max-width:100%}
 
 
