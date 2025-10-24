@@ -141,5 +141,89 @@ document.addEventListener('DOMContentLoaded', function(){
 		if(!str) return '';
 		return String(str).replace(/[&"'<>]/g, function (s) { return ({'&':'&amp;','"':'&quot;',"'":"&#39;","<":"&lt;",">":"&gt;"})[s]; });
 	}
+
+	// Simple reveal on scroll
+	const reveals = document.querySelectorAll('.reveal');
+	const obs = new IntersectionObserver((entries)=>{
+		entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+	}, {threshold:.12});
+	reveals.forEach(r=>obs.observe(r));
+
+	// Slider (auto + controls)
+	const slides = document.querySelectorAll('.slide');
+	let idx = 0;
+	function show(n){
+		slides.forEach(s=>s.classList.remove('active'));
+		slides[n].classList.add('active');
+	}
+	if(slides.length){
+		show(idx);
+		const nextBtn = document.getElementById('next'), prevBtn = document.getElementById('prev');
+		const advance = ()=>{ idx = (idx+1)%slides.length; show(idx); lazyLoadVisible(); };
+		let timer = setInterval(advance, 4500);
+		if(nextBtn) nextBtn.addEventListener('click', ()=>{ clearInterval(timer); advance(); timer=setInterval(advance,4500); });
+		if(prevBtn) prevBtn.addEventListener('click', ()=>{ clearInterval(timer); idx=(idx-1+slides.length)%slides.length; show(idx); timer=setInterval(advance,4500); lazyLoadVisible(); });
+	}
+
+	// Lazy load images (data-src)
+	const lazyImgs = document.querySelectorAll('img.lazy');
+	const imgObserver = new IntersectionObserver((entries, o)=>{
+		entries.forEach(entry=>{
+			if(entry.isIntersecting){
+				const img = entry.target;
+				img.src = img.dataset.src || img.getAttribute('src');
+				img.onload = ()=> img.classList.remove('lazy');
+				o.unobserve(img);
+			}
+		});
+	}, {rootMargin:'200px'});
+	lazyImgs.forEach(i=>imgObserver.observe(i));
+
+	function lazyLoadVisible(){ // ensure current slide image loads
+		const active = document.querySelector('.slide.active img.lazy');
+		if(active) { active.src = active.dataset.src; }
+	}
+
+	// Contact form simple validation & message
+	const contactForm = document.getElementById('contactForm');
+	if(contactForm){
+		contactForm.addEventListener('submit', function(e){
+			e.preventDefault();
+			const name = contactForm.name.value.trim(), email = contactForm.email.value.trim(), message = contactForm.message.value.trim();
+			const out = document.getElementById('formMsg');
+			if(!name || !email || !message){
+				out.textContent = 'Por favor completa todos los campos.';
+				out.style.color = '#ffb3b3';
+				return;
+			}
+			// Simula envío
+			out.textContent = 'Mensaje enviado. ¡Gracias! Te contactaremos pronto.';
+			out.style.color = '#bff5a6';
+			contactForm.reset();
+			setTimeout(()=>location.href='mensajes.html',800);
+		});
+	}
+
+	// Initialize maps if present
+	function initMap(id, lat=12.4374, lng=-86.8783, zoom=13){
+		if(!window.L || !document.getElementById(id)) return;
+		const map = L.map(id).setView([lat,lng], zoom);
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors'}).addTo(map);
+		const marker = L.marker([lat,lng]).addTo(map);
+		marker.bindPopup('<strong>Catedral de León</strong>').openPopup();
+		return map;
+	}
+
+	initMap('map',12.444, -86.878, 11); // lugares
+	initMap('contactMap',12.444, -86.878, 14); // contacto
+
+	// small accessibility: keyboard skip to main
+	const menuToggle = document.querySelector('.menu-toggle');
+	if(menuToggle){
+		menuToggle.addEventListener('click', ()=> {
+			const nav = document.querySelector('.main-nav');
+			if(nav) nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+		});
+	}
 });
 

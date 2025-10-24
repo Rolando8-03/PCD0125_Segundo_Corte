@@ -51,3 +51,23 @@ python -m http.server 8000
 ```
 
 Si quieres que haga cambios adicionales (paleta, tipografías externas, o añadir más contenido), dime qué prefieres y lo implemento.
+Edición adaptada al modo oscuro con paleta y tipografías solicitadas.
+
+Archivos modificados en la raíz:
+- index.html
+- historia.html
+- lugares.html
+- gastronomia.html
+- contacto.html
+- mensajes.html
+- style.css
+- script.js
+
+Notas rápidas:
+- Usamos Google Fonts y Feather + Leaflet por CDN.
+- No se crearon archivos adicionales.
+- Para probar localmente: abrir index.html en un navegador moderno.
+- Maps: Leaflet requiere conexión a internet (tiles OpenStreetMap).
+- Coloca tus imágenes en la carpeta images con los nombres usados (catedral.jpg, penitas.jpg, etc.) o ajusta los nombres en los HTML.
+
+Si querés, aplico más microanimaciones CSS, optimizo assets o ajusto contenido de cada página.

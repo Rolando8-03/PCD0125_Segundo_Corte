@@ -1,111 +1,89 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Historia — Guía Turística de León</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Historia — León</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Historia y patrimonio de León, Nicaragua - guía breve">
-  <meta name="robots" content="index, follow">
 </head>
-<body>
+<body class="dark">
   <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <div class="brand-logo" aria-hidden="true">L</div>
-        <div>
-          <h1 class="site-title">Guía Turística de León</h1>
-          <div class="site-sub">Historia y patrimonio</div>
-        </div>
-      </div>
-      <nav class="main-nav" aria-label="Navegación principal">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="historia.html" class="active" aria-current="page">Historia</a></li>
-          <li><a href="lugares.html">Lugares turísticos</a></li>
-          <li><a href="gastronomia.html">Gastronomía</a></li>
-          <li><a href="contacto.html">Contacto / Mapa</a></li>
-        </ul>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">León City Guide</a>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="lugares.html">Lugares</a>
+        <a href="gastronomia.html">Gastronomía</a>
+        <a href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="container" id="main">
-    <nav class="breadcrumb" aria-label="Breadcrumb" style="margin: .75rem 0; font-size: .95rem;">
-      <ol style="list-style:none; padding:0; margin:0; display:flex; gap:.5rem; align-items:center;">
-        <li><a href="index.html">Inicio</a></li>
-        <li aria-current="page">›</li>
-        <li>Historia</li>
-      </ol>
-    </nav>
+  <main>
+    <section class="page-hero" style="background-image: url('images/old-leon.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1>Historia de León</h1>
+        <p>Fundada en 1524, León es corazón cultural e histórico de Nicaragua.</p>
+      </div>
+    </section>
 
-    <section aria-labelledby="historia-title">
-      <h2 id="historia-title">Historia de León</h2>
-      <p class="muted-small">León fue fundada en el siglo XVI y se convirtió en un centro de la vida política, cultural y literaria de Nicaragua. La ciudad conserva arquitectura colonial, iglesias y plazas que narran episodios de la época republicana y movimientos sociales del siglo XX.</p>
-      <p>Destacan figuras como Rubén Darío, cuyo legado literario y cultural aún es visible en museos y eventos locales. Recomendamos visitar la ruta histórica del centro para apreciar fachadas, plazas y la influencia de distintos períodos arquitectónicos.</p>
+    <section class="container timeline reveal">
+      <h2>Línea del tiempo</h2>
+      <div class="timeline-track">
+        <div class="timeline-item">
+          <time>1524</time>
+          <p>Fundación original cerca del Lago Xolotlán.</p>
+        </div>
+        <div class="timeline-item">
+          <time>1610</time>
+          <p>Traslado tras erupción del Momotombo.</p>
+        </div>
+        <div class="timeline-item">
+          <time>1821</time>
+          <p>Proclamación de independencia.</p>
+        </div>
+        <div class="timeline-item">
+          <time>1979</time>
+          <p>Participación clave en la Revolución Sandinista.</p>
+        </div>
+        <div class="timeline-item">
+          <time>Actualidad</time>
+          <p>Reconocida por su patrimonio cultural y vida universitaria.</p>
+        </div>
+      </div>
+    </section>
 
-      <h3>Arquitectura y sitios representativos</h3>
-      <p>El centro histórico de León reúne iglesias barrocas, casas patrimoniales y plazas coloniales que muestran capas de la historia. Entre los sitios más representativos están:</p>
-      <ul>
-        <li><strong>Catedral de la Asunción</strong> — Monumento nacional, una de las más grandes de Centroamérica; ofrece vistas desde la azotea y valiosos retablos.</li>
-        <li><strong>Casa-Museo Rubén Darío</strong> — Espacio dedicado al poeta, con objetos personales y exposiciones temporales.</li>
-        <li><strong>Plaza Central</strong> — Punto de encuentro con arquitectura colonial y cafés alrededor.</li>
-        <li><strong>Convento y museo de San Francisco</strong> — Ejemplo representativo de religiosidad y colección histórica.</li>
-      </ul>
-
-      <h3>Museos y centros culturales</h3>
-      <p>León tiene pequeños museos y espacios culturales donde se conserva la memoria local y se promueven actividades artísticas:</p>
-      <ul>
-        <li><strong>Museo de la Revolución</strong> — Documentación sobre los acontecimientos del siglo XX y la historia política nacional.</li>
-        <li><strong>Galerías locales</strong> — Espacios independientes con artes visuales contemporáneas y ferias de arte en fechas puntuales.</li>
-        <li><strong>Bibliotecas y salas de lectura</strong> — Lugares para conocer la tradición literaria leonina y participar en tertulias.</li>
-      </ul>
-
-      <h3>Rutas recomendadas</h3>
-      <p>Al planear tu visita, estas rutas cortas permiten conocer lo esencial en pocas horas:</p>
-      <ol>
-        <li><strong>Ruta del centro histórico</strong> — Comienza en la Catedral, sigue por la Plaza Central, visita la Casa-Museo Rubén Darío y termina en el Convento de San Francisco.</li>
-        <li><strong>Ruta cultural</strong> — Incluye museos, galerías y una parada en una librería local para conocer autores nicaragüenses.</li>
-        <li><strong>Excursión cercana</strong> — Tour de las playas cercanas o una visita guiada a volcanes próximos (contratar operadores locales).</li>
-      </ol>
-
-      <h3>Consejos para visitantes</h3>
-      <ul class="quick-facts">
-        <li> Lleva calzado cómodo: las calles empedradas y plazas requieren zapatos adecuados.</li>
-        <li> Respeta horarios de iglesias y museos; muchos cierran al mediodía.</li>
-        <li> Prueba la comida local en fondas y mercados para una experiencia auténtica.</li>
-        <li> Pregunta por guías locales certificados para rutas históricas — aportan contexto y apoyo a la comunidad.</li>
-      </ul>
-
-      <h3>Cómo llegar</h3>
-      <p>León está bien conectada por carretera desde Managua (aprox. 1.5–2 horas). Hay autobuses públicos y microbuses regulares, además de taxis y servicios de transporte privado. Para quienes vienen en auto, sigue las rutas principales y busca estacionamientos cercanos al centro histórico.</p>
-
-      <h3>Datos rápidos</h3>
-      <ul class="quick-facts" style="margin: .5rem 0 1rem 0;">
-        <li class="fact">Fundación: Siglo XVI</li>
-        <li class="fact">Idioma: Español</li>
-        <li class="fact">Moneda: Córdoba</li>
-        <li class="fact">Clima: Tropical - temporada seca y lluvias</li>
-      </ul>
-
-      <h3>Eventos anuales</h3>
-      <div class="cards-row">
-        <article class="card">
-          <h3>Festival de la Palabra</h3>
-          <p class="muted-small">Evento cultural que reúne a escritores, tertulias y actividades para fomentar la lectura y la literatura local.</p>
+    <section class="container people reveal">
+      <h2>Personajes destacados</h2>
+      <div class="grid-3">
+        <article class="person">
+          <img data-src="images/ruben-dario.jpg" alt="Rubén Darío" class="lazy avatar">
+          <h3>Rubén Darío</h3>
+          <p>Poeta universal vinculado a la vida cultural de León.</p>
         </article>
-        <article class="card">
-          <h3>Fiestas patronales</h3>
-          <p class="muted-small">Celebraciones religiosas y comunitarias con música, procesiones y ferias de comida.</p>
+        <article class="person">
+          <img data-src="images/larreynaga.jpeg" alt="Miguel Larreynaga" class="lazy avatar">
+          <h3>Miguel Larreynaga</h3>
+          <p>Prócer de la independencia y figura local.</p>
+        </article>
+        <article class="person">
+          <img data-src="images/hernandez.jpg" alt="Francisco Hernández de Córdoba" class="lazy avatar">
+          <h3>Francisco H. de Córdoba</h3>
+          <p>Fundador — figura de la historia temprana de Nicaragua.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">&copy; <span id="year-h"></span> Guía Turística de León</div>
+    <div class="container footer-inner">
+      <div>© 2025 León City Guide</div>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
