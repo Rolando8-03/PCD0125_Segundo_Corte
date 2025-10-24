@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>León-Nicaragua</title>
+
+  <!-- Fonts & Icons (CDN OK) -->
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 2l7 5v9a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V7l7-5z" fill="#F5B800"/></svg>
+        <span>Guía Turística de León</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="lugares.html">Lugares</a>
+        <a href="gastronomia.html">Gastronomía</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <button class="cta" onclick="location.href='lugares.html'">Descubre León</button>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <video class="hero-media" autoplay muted loop playsinline>
+        <source src="images/hero-night.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <h1>León: Historia viva entre volcanes y cultura</h1>
+        <p class="lead">Explora catedrales, volcanes y sabores que cuentan siglos de historia.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#resumen">Descubre León</a>
+          <a class="btn btn-outline" href="lugares.html">Ver lugares</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resumen 3 bloques -->
+    <section id="resumen" class="summary container reveal">
+      <article class="card summary-card">
+        <div class="icon">🏛️</div>
+        <h3>Patrimonio</h3>
+        <p>Ciudad universitaria y colonial declarada patrimonio cultural.</p>
+      </article>
+      <article class="card summary-card">
+        <div class="icon">🌋</div>
+        <h3>Aventura</h3>
+        <p>Deslízate en Cerro Negro o visita rutas de surf en la costa Pacífica.</p>
+      </article>
+      <article class="card summary-card">
+        <div class="icon">🎨</div>
+        <h3>Cultura</h3>
+        <p>Museos, murales, poesía y vida universitaria vibrante.</p>
+      </article>
+    </section>
+
+    <!-- Galería slider -->
+    <section class="gallery container reveal">
+      <div class="slider" id="mainSlider">
+        <div class="slide active"><img data-src="images/catedral.jpg" alt="Catedral de León" class="lazy"></div>
+        <div class="slide"><img data-src="images/penitas.jpg" alt="Playa Las Peñitas" class="lazy"></div>
+        <div class="slide"><img data-src="images/murals.jpg" alt="Murales de León" class="lazy"></div>
+        <div class="slide"><img data-src="images/comida.jpg" alt="Gastronomía leonesa" class="lazy"></div>
+      </div>
+      <div class="slider-controls">
+        <button id="prev">◀</button>
+        <button id="next">▶</button>
+      </div>
+    </section>
+
+    <!-- Testimonio -->
+    <section class="testimonial container reveal">
+      <blockquote>“Cada esquina de León respira historia y calor humano.”</blockquote>
+      <cite>— Visitante</cite>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>León City Guide</strong>
+        <p>Frente a la Catedral · León, Nicaragua</p>
+      </div>
+      <div class="footer-right">
+        <nav>
+          <a href="#">Facebook</a> · <a href="#">Instagram</a> · <a href="#">TripAdvisor</a>
+        </nav>
+        <small>© 2025 León City Guide — Diseñado para turismo responsable</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js" defer></script>
+  <script>feather.replace()</script>
+</body>
+</html>

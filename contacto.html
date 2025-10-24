@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contacto — León City Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">León City Guide</a>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="lugares.html">Lugares</a>
+        <a href="gastronomia.html">Gastronomía</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container contact-grid reveal">
+      <div class="contact-form">
+        <h1>Contacto</h1>
+        <p>Escríbenos, con gusto te ayudamos a planear tu visita.</p>
+        <form id="contactForm" novalidate>
+          <label>Nombre<input type="text" name="name" required></label>
+          <label>Correo<input type="email" name="email" required></label>
+          <label>Mensaje<textarea name="message" rows="5" required></textarea></label>
+          <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+          <p id="formMsg" class="muted" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h2>Ubicación</h2>
+        <div id="contactMap" style="height:260px;"></div>
+        <ul class="contact-list">
+          <li>📧 leonturismo@gmail.com</li>
+          <li>📞 +505 1234 5678</li>
+          <li>📍 Frente a la Catedral de León</li>
+        </ul>
+        <div class="socials">
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="WhatsApp">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 León City Guide</div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
