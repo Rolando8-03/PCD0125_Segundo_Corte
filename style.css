@@ -34,15 +34,71 @@ body.dark{
   font-feature-settings: "liga" 1;
 }
 
-/* layout general */
-.container{max-width:var(--container);margin:0 auto;padding:1rem}
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:110;
-  border-bottom:1px solid rgba(255,255,255,0.03);
-  background:linear-gradient(180deg, rgba(14,14,14,0.94), rgba(14,14,14,0.6));
-  backdrop-filter: blur(6px);
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+
+/* Header */
+.site-header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:.9rem 0;position:sticky;top:0;z-index:60;box-shadow:var(--shadow-sm)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand-logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--gold),rgba(255,255,255,0.12));display:flex;align-items:center;justify-content:center;color:var(--accent-2);font-weight:800}
+.site-title{margin:0;font-size:1.15rem;font-weight:700}
+
+/* Navigation */
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.6rem;align-items:center}
+.main-nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:700}
+.main-nav a:hover{background:rgba(255,255,255,0.06)}
+.main-nav a.active{background:rgba(255,255,255,0.12)}
+
+/* Hero */
+.hero{padding:2.5rem 0;display:grid;grid-template-columns:1fr;gap:1rem;align-items:start}
+.hero h2{margin:0 0 .25rem;font-size:2rem;color:var(--surface)}
+.lead{font-size:1.06rem;color:rgba(255,255,255,0.92);max-width:68ch}
+.btn{display:inline-flex;align-items:center;padding:.6rem .95rem;border-radius:999px;border:0;background:rgba(255,255,255,0.08);color:#fff;font-weight:700}
+.btn.primary{background:var(--gold);color:var(--accent-2)}
+
+/* Content */
+section{margin-top:1.25rem}
+.cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:var(--surface);border-radius:var(--radius);padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.card h3{margin:.25rem 0 .5rem;font-size:1.05rem;color:var(--text)}
+.card p{margin:0;color:var(--muted)}
+
+.thumb-img{height:140px;background:linear-gradient(180deg,var(--sand),#fff);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
+.thumb-img img{width:100%;height:140px;object-fit:cover;display:block;border-radius:8px}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+
+/* Food grid */
+.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+
+
+/* Forms */
+form{display:grid;gap:.6rem;max-width:640px}
+label{font-weight:600;color:var(--muted)}
+input,textarea{padding:.75rem;border:1px solid var(--border);border-radius:10px}
+button{background:var(--accent-2);color:#fff;padding:.6rem 1rem;border:0;border-radius:8px}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:120}
+.lightbox[aria-hidden="false"]{display:flex}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);padding:1.25rem 0;margin-top:2rem;color:var(--muted)}
+
+@media (min-width:900px){.hero{grid-template-columns:1fr 420px}}
+
+/* End */
+:root{
+	--bg: #f7f8f9;
+	--surface: #ffffff;
+	--muted: #6b6b6b;
+	--text: #1f2933;
+	--accent: #2f4f4f;
+	--accent-2: #8aa29b;
+	--sand: #f0e6d8;
+	--border: #e6e7e8;
+	--shadow-sm: 0 6px 18px rgba(16,24,32,0.06);
+	--radius: 12px;
 }
 .header-inner{display:flex;align-items:center;gap:1rem;padding:.8rem 1rem}
 .logo{display:flex;align-items:center;gap:.5rem;color:var(--text);text-decoration:none;font-weight:700;font-family:'Comfortaa',sans-serif}
