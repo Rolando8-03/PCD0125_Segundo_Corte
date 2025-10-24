@@ -1,52 +1,80 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gastronomía — Guía Turística de León</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gastronomía — León</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
   <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">Guía Turística de León</h1>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Guía Turística de León</a>
       <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="historia.html">Historia</a></li>
-          <li><a href="lugares.html">Lugares turísticos</a></li>
-          <li><a href="gastronomia.html" class="active">Gastronomía</a></li>
-          <li><a href="contacto.html">Contacto / Mapa</a></li>
-        </ul>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="lugares.html">Lugares</a>
+        <a href="gastronomia.html">Gastronomía</a>
+        <a href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>Gastronomía</h2>
+  <main>
+    <section class="page-hero" style="background-image:url('images/food-hero.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1>Sabores de León</h1>
+        <p>Cada receta cuenta una historia.</p>
+      </div>
+    </section>
+
+    <section class="container food-list reveal">
+      <article class="food-card">
+        <img data-src="images/comida.jpg" alt="Quesillo" class="lazy">
+        <div class="card-body">
+          <h3>Quesillo</h3>
+          <p>Queso, crema y tortilla — tradición popular en La Paz Centro.</p>
+          <p class="muted">Recomendado: Comedor Lucy, frente a la Catedral.</p>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img data-src="images/indio-viejo.jpg" alt="Indio Viejo" class="lazy">
+        <div class="card-body">
+          <h3>Indio Viejo</h3>
+          <p>Guiso tradicional hecho con maíz, carne y especias locales.</p>
+          <p class="muted">Platillo de herencia colonial y campesina.</p>
+        </div>
+      </article>
+
+      <article class="food-card">
+        <img data-src="images/nacatamal.jpg" alt="Nacatamal" class="lazy">
+        <div class="card-body">
+          <h3>Nacatamal</h3>
+          <p>Envoltura de hoja de plátano, carne y masa — celebración y sabor.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="container reveal">
+      <h2>Rutas gastronómicas</h2>
+      <ul class="routes">
+        <li>Ruta del Quesillo — La Paz Centro</li>
+        <li>Ruta del Cacao — León Centro</li>
+        <li>Ruta de los Dulces — Sutiaba</li>
+      </ul>
+      <p class="funfact">¿Sabías que el quesillo es un símbolo gastronómico nacional?</p>
     </section>
   </main>
 
-      <p>Platos típicos de León, Nicaragua.</p>
-      <div class="food-grid">
-          <article class="food-card">
-              <img src="images/baho.jpg" alt="Baho" />
-              <h3>Baho</h3>
-              <p>Baho: guiso tradicional hecho con carne de res, yuca y plátano verde al vapor, sazonado con achiote y especias. Es muy popular en celebraciones y mercados de la región.</p>
-              <!-- Fuente imagen: Wikimedia Commons - CC BY-SA 4.0 -->
-              <!-- https://upload.wikimedia.org/wikipedia/commons/8/86/Baho.jpg -->
-          </article>
-          <article class="food-card">
-              <img src="images/indio-viejo.jpg" alt="Indio viejo" />
-              <h3>Indio viejo</h3>
-              <p>Indio viejo: estofado de maíz y carne desmenuzada con condimentos tradicionales (ajo, achiote, chile y hierbas). Es un plato con raíces indígenas y muy representativo de Nicaragua.</p>
-              <!-- Fuente imagen: Wikimedia Commons - CC BY-SA 4.0 -->
-              <!-- https://commons.wikimedia.org/wiki/File:Indio-viejo-nicaraguense.jpg -->
-          </article>
-      </div>
-    <div class="container">&copy; <span id="year-g"></span> Guía Turística de León</div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 León City Guide</div>
+    </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

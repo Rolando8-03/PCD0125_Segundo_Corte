@@ -1,75 +1,89 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Historia — Guía Turística de León</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Historia — León</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Historia y patrimonio de León, Nicaragua - guía breve">
-  <meta name="robots" content="index, follow">
 </head>
-<body>
+<body class="dark">
   <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <div class="brand-logo" aria-hidden="true">L</div>
-        <div>
-          <h1 class="site-title">Guía Turística de León</h1>
-          <div class="site-sub">Historia y patrimonio</div>
-        </div>
-      </div>
-      <nav class="main-nav" aria-label="Navegación principal">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="historia.html" class="active" aria-current="page">Historia</a></li>
-          <li><a href="lugares.html">Lugares turísticos</a></li>
-          <li><a href="gastronomia.html">Gastronomía</a></li>
-          <li><a href="contacto.html">Contacto / Mapa</a></li>
-        </ul>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Guía Turística de León</a>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="lugares.html">Lugares</a>
+        <a href="gastronomia.html">Gastronomía</a>
+        <a href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <main class="container" id="main">
-    <nav class="breadcrumb" aria-label="Breadcrumb" style="margin: .75rem 0; font-size: .95rem;">
-      <ol style="list-style:none; padding:0; margin:0; display:flex; gap:.5rem; align-items:center;">
-        <li><a href="index.html">Inicio</a></li>
-        <li aria-current="page">›</li>
-        <li>Historia</li>
-      </ol>
-    </nav>
+  <main>
+    <section class="page-hero" style="background-image: url('images/old-leon.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1>Historia de León</h1>
+        <p>Fundada en 1524, León es corazón cultural e histórico de Nicaragua.</p>
+      </div>
+    </section>
 
-    <section aria-labelledby="historia-title">
-      <h2 id="historia-title">Historia de León</h2>
-      <p class="muted-small">León fue fundada en el siglo XVI y se convirtió en un centro de la vida política, cultural y literaria de Nicaragua. La ciudad conserva arquitectura colonial, iglesias y plazas que narran episodios de la época republicana y movimientos sociales del siglo XX.</p>
-      <p>Destacan figuras como Rubén Darío, cuyo legado literario y cultural aún es visible en museos y eventos locales. Recomendamos visitar la ruta histórica del centro para apreciar fachadas, plazas y la influencia de distintos períodos arquitectónicos.</p>
+    <section class="container timeline reveal">
+      <h2>Línea del tiempo</h2>
+      <div class="timeline-track">
+        <div class="timeline-item">
+          <time>1524</time>
+          <p>Fundación original cerca del Lago Xolotlán.</p>
+        </div>
+        <div class="timeline-item">
+          <time>1610</time>
+          <p>Traslado tras erupción del Momotombo.</p>
+        </div>
+        <div class="timeline-item">
+          <time>1821</time>
+          <p>Proclamación de independencia.</p>
+        </div>
+        <div class="timeline-item">
+          <time>1979</time>
+          <p>Participación clave en la Revolución Sandinista.</p>
+        </div>
+        <div class="timeline-item">
+          <time>Actualidad</time>
+          <p>Reconocida por su patrimonio cultural y vida universitaria.</p>
+        </div>
+      </div>
+    </section>
 
-      <h3>Datos rápidos</h3>
-      <ul class="quick-facts" style="margin: .5rem 0 1rem 0;">
-        <li class="fact">Fundación: Siglo XVI</li>
-        <li class="fact">Idioma: Español</li>
-        <li class="fact">Moneda: Córdoba</li>
-        <li class="fact">Clima: Tropical - temporada seca y lluvias</li>
-      </ul>
-
-      <h3>Eventos anuales</h3>
-      <div class="cards-row">
-        <article class="card">
-          <h3>Festival de la Palabra</h3>
-          <p class="muted-small">Evento cultural que reúne a escritores, tertulias y actividades para fomentar la lectura y la literatura local.</p>
+    <section class="container people reveal">
+      <h2>Personajes destacados</h2>
+      <div class="grid-3">
+        <article class="person">
+          <img data-src="images/ruben-dario.jpg" alt="Rubén Darío" class="lazy avatar">
+          <h3>Rubén Darío</h3>
+          <p>Poeta universal vinculado a la vida cultural de León.</p>
         </article>
-        <article class="card">
-          <h3>Fiestas patronales</h3>
-          <p class="muted-small">Celebraciones religiosas y comunitarias con música, procesiones y ferias de comida.</p>
+        <article class="person">
+          <img data-src="images/larreynaga.jpeg" alt="Miguel Larreynaga" class="lazy avatar">
+          <h3>Miguel Larreynaga</h3>
+          <p>Prócer de la independencia y figura local.</p>
+        </article>
+        <article class="person">
+          <img data-src="images/hernandez.jpg" alt="Francisco Hernández de Córdoba" class="lazy avatar">
+          <h3>Francisco H. de Córdoba</h3>
+          <p>Fundador — figura de la historia temprana de Nicaragua.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">&copy; <span id="year-h"></span> Guía Turística de León</div>
+    <div class="container footer-inner">
+      <div>© 2025 León City Guide</div>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
